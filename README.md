@@ -14,7 +14,7 @@ The project combines embedded systems, mechanical design, and materials engineer
 
 ## Current Status
 
-🚧 **Actively under development**
+🚧 **Under development**
 
 ### Electronics
 
