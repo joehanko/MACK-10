@@ -3,7 +3,7 @@
 > An open-source desktop tensile tester for material characterization, designed to make mechanical testing affordable, accessible, and educational.
 
 <p align="center">
-  <img src="images/prototype.jpg" width="700" alt="MACK-10 Prototype">
+  <img src="images/proto.jpg" width="700" alt="MACK-10 Prototype">
 </p>
 
 MACK-10 is a DIY tensile testing machine designed to evaluate the mechanical properties of small material specimens including 3D printed plastics, polymers, composites, and other engineering materials.
