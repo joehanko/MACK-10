@@ -53,7 +53,3 @@ Current progress:
 Commercial tensile testers can cost several thousand dollars. This project is an attempt to build a capable bench-top alternative while learning more about embedded systems, controls, mechanics, and materials testing.
 
 This project is intended for educational and hobby use and is not intended to replace certified testing equipment.
-
-## License
-
-MIT License
