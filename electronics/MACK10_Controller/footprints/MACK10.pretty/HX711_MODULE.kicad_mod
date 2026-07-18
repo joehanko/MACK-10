@@ -8,7 +8,7 @@
 	(property "Reference" "REF**"
 		(at 0 11.43 0)
 		(layer "F.SilkS")
-		(uuid "9b849d2c-2939-43db-a2d0-e294b0f294ce")
+		(uuid "060bf76c-d85a-4102-ab49-3ffecea8115a")
 		(effects
 			(font
 				(size 1 1)
@@ -20,7 +20,7 @@
 	(property "Value" "HX711_MODULE"
 		(at 12.7 -3.81 0)
 		(layer "F.Fab")
-		(uuid "5465adb1-7f47-4620-9105-c19d77a26154")
+		(uuid "f003e64a-e93c-498b-8d80-02e28bf6817a")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "b9f11f97-641b-474a-a621-dd2d8a7cc369")
+		(uuid "e58efd27-b881-41ea-9838-3541c2320e6f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "6f52dbf1-7390-43a4-a442-16fa30291363")
+		(uuid "17ea1f88-3abb-406a-866a-003dd41d28b7")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -54,7 +54,7 @@
 		(at 0 0 0)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "cb984720-2b1a-401e-869f-2a630afaa7c8")
+		(uuid "d570fd6c-5d76-489e-afdb-b50f348ac758")
 		(effects
 			(font
 				(size 1 1)
@@ -73,13 +73,13 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "08f36ce4-254e-4e70-9f69-2b0d49b343e3")
+		(uuid "6d4f2945-c9be-4bf6-b1ce-b8f2da8a5fee")
 	)
 	(fp_text user "E+"
 		(at -2.54 -1.27 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "56417d4c-b84c-46d8-94a0-95b7acb79fb9")
+		(uuid "2da8c694-35f0-4900-b62c-a5029d55745c")
 		(effects
 			(font
 				(size 1 1)
@@ -92,7 +92,7 @@
 		(at -2.54 1.27 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "694d4012-2048-49dc-bec2-2f6ff43a5384")
+		(uuid "40a48338-9bce-4c61-b7fe-20882e501aba")
 		(effects
 			(font
 				(size 1 1)
@@ -105,7 +105,7 @@
 		(at -2.54 3.81 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "d64c721d-bbef-4859-bd40-343bad4a9012")
+		(uuid "c3dcff65-bec3-46bd-9925-b1a498070607")
 		(effects
 			(font
 				(size 1 1)
@@ -118,7 +118,7 @@
 		(at -2.54 6.35 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "1f5d139d-9e88-42fa-9098-2ffd14a0bc3f")
+		(uuid "5c161ad8-8cda-433d-8b41-63daca5c0c6f")
 		(effects
 			(font
 				(size 1 1)
@@ -131,7 +131,7 @@
 		(at -2.54 8.89 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "0bd5da11-613a-4ec9-8484-0d498102ca5e")
+		(uuid "43566042-78e3-4c36-86db-64c876f42de1")
 		(effects
 			(font
 				(size 1 1)
@@ -144,7 +144,7 @@
 		(at -2.54 11.43 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "cd635e7b-f9d6-48c8-a4d0-ed6472425be5")
+		(uuid "b9ceb680-1e99-47aa-b192-eeff3f81bd8c")
 		(effects
 			(font
 				(size 1 1)
@@ -157,7 +157,7 @@
 		(at 27.94 1.27 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "aeb9b6f2-aefb-4fc8-9a23-5c4c118fb45e")
+		(uuid "6fb95e0c-d044-4999-8fdf-3d1ffc65b07c")
 		(effects
 			(font
 				(size 1 1)
@@ -170,7 +170,7 @@
 		(at 27.94 3.81 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "7aadbb3b-a64a-40a2-9249-2aae01b057ea")
+		(uuid "fd2027cc-d43f-4bab-99c6-a9dc42c80741")
 		(effects
 			(font
 				(size 1 1)
@@ -183,7 +183,7 @@
 		(at 27.94 6.35 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "a0395744-64bf-4054-ae30-11f1175b6440")
+		(uuid "3409936c-4c75-430a-8688-a3361b1f6f1f")
 		(effects
 			(font
 				(size 1 1)
@@ -196,7 +196,7 @@
 		(at 27.94 8.89 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "9e918406-306d-4809-bf5d-58d8df0f6dc0")
+		(uuid "e46bdeb3-16c5-42c7-ad0c-30cddd81dea1")
 		(effects
 			(font
 				(size 1 1)
@@ -211,7 +211,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "efd21d4c-075f-4930-8128-5bc51f7ddf18")
+		(uuid "a3d3b98a-87aa-4193-b8ab-1d6559bfcd0c")
 	)
 	(pad "2" thru_hole circle
 		(at 0 0)
@@ -219,7 +219,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "4b6da05e-39a8-48b7-8ec3-77f8edb688a5")
+		(uuid "572c9c5d-b6af-42fa-b027-f6dc72a414b5")
 	)
 	(pad "3" thru_hole circle
 		(at 0 2.54)
@@ -227,7 +227,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "26d14053-0b61-4a55-9793-2744091a9496")
+		(uuid "efcb00b1-c860-4fe8-bc9b-4136081351ec")
 	)
 	(pad "4" thru_hole circle
 		(at 0 5.08)
@@ -235,7 +235,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "943519b1-1457-4e1b-9703-d9e44a6ad747")
+		(uuid "18dbdeee-2dfa-4e32-9c40-326ed6ce6e95")
 	)
 	(pad "5" thru_hole circle
 		(at 0 7.62)
@@ -243,7 +243,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "28534358-5b21-43c5-ad61-1edbfcbdaea8")
+		(uuid "51b00480-ccc7-402e-8878-3c7a87b103fd")
 	)
 	(pad "6" thru_hole circle
 		(at 0 10.16)
@@ -251,7 +251,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "c4ef9805-8449-4747-9b95-c8e916b8a187")
+		(uuid "e9be35fe-1de0-4b61-9a82-a2a9deeba6c1")
 	)
 	(pad "7" thru_hole circle
 		(at 25.2 0)
@@ -259,7 +259,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "b7daead4-25aa-4e70-9551-500516059d1b")
+		(uuid "94f90a0b-8341-42de-bd95-f4786dd64b9f")
 	)
 	(pad "8" thru_hole circle
 		(at 25.2 2.54)
@@ -267,7 +267,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "9fe99ced-f8a0-48be-985c-21877018c138")
+		(uuid "113f8967-91cd-4594-a352-487dd8c52f94")
 	)
 	(pad "9" thru_hole circle
 		(at 25.2 5.08)
@@ -275,7 +275,7 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "b2a4db90-8ce0-44ae-81d5-58dde667e494")
+		(uuid "47b05a2c-6fbd-4d5b-9935-ac28343f6f10")
 	)
 	(pad "10" thru_hole circle
 		(at 25.2 7.62)
@@ -283,18 +283,29 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "85d87b7c-801b-44cb-9123-16bea1a7c266")
+		(uuid "f9516e9f-5182-41d5-a6b6-12ca35ee5d7e")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x04_P2.54mm_Vertical.step"
+	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x06_P2.54mm_Vertical.step"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 2.54 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz -0 -0 -0)
+		)
+	)
+	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x04_P2.54mm_Vertical.step"
+		(offset
+			(xyz 25.4 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
 		)
 	)
 )
