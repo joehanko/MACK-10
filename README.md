@@ -3,7 +3,7 @@
 > An open-source desktop tensile tester for material characterization, designed to make mechanical testing affordable, accessible, and educational.
 
 <p align="center">
-  <img src="images/proto.jpg" width="700" alt="MACK-10 Prototype">
+  <img src="images/hero.png" width="900" alt="MACK-10 Banner">
 </p>
 
 ![Status](https://img.shields.io/badge/Status-Prototype-orange)
@@ -202,6 +202,12 @@ Additional documentation (assembly guide, wiring diagrams, calibration procedure
 - Cable Management Components
 
 **Estimated Mechanical Cost:** **$170–195**
+
+---
+
+<p align="center">
+  <img src="images/proto.jpg" width="700" alt="MACK-10 Prototype">
+</p>
 
 ---
 
