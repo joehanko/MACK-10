@@ -524,8 +524,8 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
-      "specctra_dsn": "",
+      "plot": "../../../../../../../../../../../Downloads/Gerbers/",
+      "specctra_dsn": "../../../../../../../../../../../Downloads/MACK10_Controller.dsn",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -609,6 +609,12 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
           "show": false
         }
       ],
