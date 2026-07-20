@@ -10,39 +10,41 @@
 		(rev "1")
 	)
 	(lib_symbols
-		(symbol "Conn_01x04_1"
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016)
+				(offset 0.762)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J6"
-				(at -0.762 6.35 0)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "SSD1306"
-				(at -4.318 -8.89 0)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
-				(at 0.254 10.16 0)
+			(property "Footprint" ""
+				(at 5.08 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -53,6 +55,17 @@
 				)
 			)
 			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -63,18 +76,7 @@
 					)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0.762 13.208 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
+			(property "ki_keywords" "test point tp"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -85,7 +87,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(property "ki_fp_filters" "Pin* Test*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -96,66 +98,24 @@
 					)
 				)
 			)
-			(symbol "Conn_01x04_1_1_1"
-				(rectangle
-					(start -1.27 3.81)
-					(end 1.27 -6.35)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
 					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
+						(width 0)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
+			)
+			(symbol "TestPoint_1_1"
 				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "GND"
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -163,60 +123,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3393,16 +3299,70 @@
 		)
 	)
 	(junction
-		(at 132.08 76.2)
+		(at 237.49 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e56f4b0-500d-44d9-a78b-04e293dc5458")
+	)
+	(junction
+		(at 60.96 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "15b39c62-de08-451e-a48d-33f45733122c")
+	)
+	(junction
+		(at 237.49 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2eeb7116-f1be-40cc-92b7-5295d0b06cfe")
+	)
+	(junction
+		(at 53.34 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3dd840d5-316e-43d3-8a7d-8bd7863497c5")
+	)
+	(junction
+		(at 60.96 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85f3b2c1-2524-4eec-af66-8c09d964f8ee")
+	)
+	(junction
+		(at 143.51 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "909c4e0a-0795-4c7d-b34a-7c2f5a606a11")
+	)
+	(junction
+		(at 143.51 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bbb40741-0720-46c6-9e90-0d5f4bb7b674")
+	)
+	(junction
+		(at 124.46 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d6c42465-0093-4b58-b9fe-c5eedc8cf249")
 	)
 	(junction
-		(at 132.08 68.58)
+		(at 270.51 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f2051338-adf6-45bb-b2ab-9ea2976ff9ff")
+	)
+	(junction
+		(at 124.46 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f7697316-f40b-44bb-b318-95abb3d75138")
+	)
+	(junction
+		(at 172.72 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fe263699-9f20-4d5d-9372-479d10ab1a33")
 	)
 	(no_connect
 		(at 208.28 74.93)
@@ -3413,7 +3373,7 @@
 		(uuid "12ccac6e-6fce-49e4-8739-fc854564b559")
 	)
 	(no_connect
-		(at 78.74 83.82)
+		(at 71.12 82.55)
 		(uuid "2790300c-5fd6-44ed-b08f-6d6bd6b2ee55")
 	)
 	(no_connect
@@ -3425,7 +3385,7 @@
 		(uuid "498db81f-1e12-4c2a-8207-1ee0e57485ff")
 	)
 	(no_connect
-		(at 113.03 55.88)
+		(at 105.41 54.61)
 		(uuid "5d5bb74e-8bb5-46de-908b-2df6fe676f03")
 	)
 	(no_connect
@@ -3433,7 +3393,7 @@
 		(uuid "62404aad-bc99-4592-894d-3ad4a069cccd")
 	)
 	(no_connect
-		(at 78.74 87.63)
+		(at 71.12 86.36)
 		(uuid "76a022f4-4a67-4e94-af94-c4bef1e61b25")
 	)
 	(no_connect
@@ -3441,11 +3401,11 @@
 		(uuid "9429794d-9e9b-436e-add2-f3d751a17057")
 	)
 	(no_connect
-		(at 78.74 91.44)
+		(at 71.12 90.17)
 		(uuid "96196936-1240-459e-9faa-95748cd80f8c")
 	)
 	(no_connect
-		(at 113.03 59.69)
+		(at 105.41 58.42)
 		(uuid "99053c15-3e6a-49c8-97ce-55b8a11e1b6f")
 	)
 	(no_connect
@@ -3453,7 +3413,7 @@
 		(uuid "b10d5c66-ba0e-4faa-8382-c17e878b11a1")
 	)
 	(no_connect
-		(at 78.74 80.01)
+		(at 71.12 78.74)
 		(uuid "bffac9b3-9bb3-4bdc-9cea-d4f996525133")
 	)
 	(no_connect
@@ -3473,7 +3433,7 @@
 		(uuid "ed7d9149-5bae-40c1-a04a-41c642b96423")
 	)
 	(no_connect
-		(at 78.74 76.2)
+		(at 71.12 74.93)
 		(uuid "eeaa7e40-fed0-40b7-8eef-b63e45f5fe9f")
 	)
 	(no_connect
@@ -3492,7 +3452,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 44.45) (xy 113.03 44.45)
+			(xy 96.52 43.18) (xy 105.41 43.18)
 		)
 		(stroke
 			(width 0)
@@ -3532,7 +3492,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 81.28) (xy 119.38 80.01)
+			(xy 111.76 80.01) (xy 111.76 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3552,7 +3512,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 40.64) (xy 144.78 40.64)
+			(xy 127 39.37) (xy 137.16 39.37)
 		)
 		(stroke
 			(width 0)
@@ -3562,7 +3522,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 48.26) (xy 55.88 48.26)
+			(xy 41.91 46.99) (xy 48.26 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3572,7 +3532,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 52.07) (xy 144.78 52.07)
+			(xy 127 50.8) (xy 137.16 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3582,7 +3542,17 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 48.26) (xy 113.03 48.26)
+			(xy 127 43.18) (xy 143.51 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14316ea4-7b6e-4d1f-b4b6-b3556f7b448f")
+	)
+	(wire
+		(pts
+			(xy 96.52 46.99) (xy 105.41 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3592,7 +3562,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 132.08) (xy 171.45 132.08)
+			(xy 259.08 151.13) (xy 271.78 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3622,7 +3592,27 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 86.36) (xy 119.38 87.63)
+			(xy 53.34 104.14) (xy 53.34 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e7b0ee1-d914-4a40-b6b7-a129d9ae1676")
+	)
+	(wire
+		(pts
+			(xy 237.49 158.75) (xy 237.49 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "219a0d26-bf09-4548-8d4b-92e1589420d9")
+	)
+	(wire
+		(pts
+			(xy 111.76 85.09) (xy 111.76 86.36)
 		)
 		(stroke
 			(width 0)
@@ -3642,7 +3632,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 91.44) (xy 101.6 91.44)
+			(xy 111.76 90.17) (xy 93.98 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3652,13 +3642,33 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 40.64) (xy 55.88 40.64)
+			(xy 172.72 31.75) (xy 172.72 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d7d4068-eb68-4458-925d-efe34ff2816c")
+	)
+	(wire
+		(pts
+			(xy 41.91 39.37) (xy 48.26 39.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "336b413f-6db7-4ba6-86d4-a0abb97a2118")
+	)
+	(wire
+		(pts
+			(xy 143.51 43.18) (xy 144.78 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37fac1d4-f4f4-41e8-a453-137784100347")
 	)
 	(wire
 		(pts
@@ -3682,7 +3692,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 39.37) (xy 170.18 39.37)
+			(xy 180.34 39.37) (xy 172.72 39.37)
 		)
 		(stroke
 			(width 0)
@@ -3702,7 +3712,17 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 40.64) (xy 113.03 40.64)
+			(xy 237.49 147.32) (xy 246.38 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e8d79df-91c0-4fd3-98a1-2999fb7feb72")
+	)
+	(wire
+		(pts
+			(xy 96.52 39.37) (xy 105.41 39.37)
 		)
 		(stroke
 			(width 0)
@@ -3722,7 +3742,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 86.36) (xy 119.38 86.36)
+			(xy 114.3 85.09) (xy 111.76 85.09)
 		)
 		(stroke
 			(width 0)
@@ -3732,7 +3752,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 68.58) (xy 142.24 68.58)
+			(xy 124.46 67.31) (xy 134.62 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3752,6 +3772,16 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 93.98) (xy 71.12 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58c67b1d-e0b7-4167-832d-db082ff22ee4")
+	)
+	(wire
+		(pts
 			(xy 208.28 49.53) (xy 217.17 49.53)
 		)
 		(stroke
@@ -3762,7 +3792,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 72.39) (xy 78.74 72.39)
+			(xy 59.69 71.12) (xy 60.96 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3772,7 +3802,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 76.2) (xy 142.24 76.2)
+			(xy 124.46 74.93) (xy 134.62 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3782,7 +3812,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 88.9) (xy 119.38 91.44)
+			(xy 111.76 87.63) (xy 111.76 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3792,7 +3822,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 80.01) (xy 101.6 80.01)
+			(xy 111.76 78.74) (xy 93.98 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3802,7 +3832,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 128.27) (xy 146.05 128.27)
+			(xy 234.95 147.32) (xy 237.49 147.32)
 		)
 		(stroke
 			(width 0)
@@ -3819,16 +3849,6 @@
 			(type default)
 		)
 		(uuid "73c75d39-d598-49ff-8ce5-875377ee08db")
-	)
-	(wire
-		(pts
-			(xy 134.62 44.45) (xy 144.78 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "772ecf3c-0b27-44d1-9b0d-8d41cd57ecdd")
 	)
 	(wire
 		(pts
@@ -3852,7 +3872,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 48.26) (xy 81.28 48.26)
+			(xy 71.12 46.99) (xy 73.66 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3862,7 +3882,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 68.58) (xy 128.27 72.39)
+			(xy 120.65 67.31) (xy 120.65 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3872,7 +3892,17 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 68.58) (xy 132.08 68.58)
+			(xy 270.51 147.32) (xy 271.78 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95b4b73c-31dc-4ba7-963e-7f959851c8a2")
+	)
+	(wire
+		(pts
+			(xy 120.65 67.31) (xy 124.46 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3892,7 +3922,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 72.39) (xy 128.27 72.39)
+			(xy 93.98 71.12) (xy 120.65 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3902,7 +3932,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 45.72) (xy 55.88 45.72)
+			(xy 41.91 44.45) (xy 48.26 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3922,13 +3952,23 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 43.18) (xy 55.88 43.18)
+			(xy 41.91 41.91) (xy 48.26 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9fae59aa-ca5a-44a3-a2f1-d7322980b03d")
+	)
+	(wire
+		(pts
+			(xy 143.51 46.99) (xy 144.78 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4f338e3-10e1-4663-8776-19f0ff793f6a")
 	)
 	(wire
 		(pts
@@ -3942,7 +3982,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 40.64) (xy 81.28 40.64)
+			(xy 71.12 39.37) (xy 73.66 39.37)
 		)
 		(stroke
 			(width 0)
@@ -3952,7 +3992,27 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 99.06) (xy 78.74 99.06)
+			(xy 172.72 39.37) (xy 170.18 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9de5810-975b-483e-9074-43e103e13c7a")
+	)
+	(wire
+		(pts
+			(xy 143.51 52.07) (xy 143.51 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b02c1325-c75a-40ed-88b8-69fc1fded83a")
+	)
+	(wire
+		(pts
+			(xy 59.69 97.79) (xy 60.96 97.79)
 		)
 		(stroke
 			(width 0)
@@ -3962,13 +4022,43 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 52.07) (xy 113.03 52.07)
+			(xy 96.52 50.8) (xy 105.41 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b2ec72e6-c2fa-4cb6-8bc1-c3e9b17cd7ba")
+	)
+	(wire
+		(pts
+			(xy 60.96 104.14) (xy 60.96 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b67fb012-f560-4fe4-be11-51eca1d05a57")
+	)
+	(wire
+		(pts
+			(xy 270.51 144.78) (xy 270.51 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6e1372f-d3d1-480f-a514-c43364113d99")
+	)
+	(wire
+		(pts
+			(xy 60.96 97.79) (xy 71.12 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6e2b65d-b37a-42bd-b3c1-8d37ac0c7111")
 	)
 	(wire
 		(pts
@@ -3982,7 +4072,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 48.26) (xy 144.78 48.26)
+			(xy 127 46.99) (xy 143.51 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3992,7 +4082,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 95.25) (xy 113.03 95.25)
+			(xy 93.98 93.98) (xy 105.41 93.98)
 		)
 		(stroke
 			(width 0)
@@ -4012,7 +4102,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 43.18) (xy 81.28 43.18)
+			(xy 71.12 41.91) (xy 73.66 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4032,7 +4122,27 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 99.06) (xy 113.03 99.06)
+			(xy 60.96 71.12) (xy 71.12 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6fd99f4-ed7c-4e19-ba71-2020ee7f0abe")
+	)
+	(wire
+		(pts
+			(xy 143.51 31.75) (xy 143.51 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7b3fdb8-9b56-4588-bc93-79d98bad61c3")
+	)
+	(wire
+		(pts
+			(xy 93.98 97.79) (xy 105.41 97.79)
 		)
 		(stroke
 			(width 0)
@@ -4052,7 +4162,17 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 81.28) (xy 119.38 81.28)
+			(xy 237.49 143.51) (xy 237.49 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e40f0d4d-abe4-40e5-b3ba-47b76faec6c4")
+	)
+	(wire
+		(pts
+			(xy 114.3 80.01) (xy 111.76 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4062,7 +4182,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 95.25) (xy 78.74 95.25)
+			(xy 52.07 93.98) (xy 53.34 93.98)
 		)
 		(stroke
 			(width 0)
@@ -4072,7 +4192,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 76.2) (xy 132.08 76.2)
+			(xy 93.98 74.93) (xy 124.46 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4082,7 +4202,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 87.63) (xy 101.6 87.63)
+			(xy 111.76 86.36) (xy 93.98 86.36)
 		)
 		(stroke
 			(width 0)
@@ -4092,7 +4212,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 45.72) (xy 81.28 45.72)
+			(xy 71.12 44.45) (xy 73.66 44.45)
 		)
 		(stroke
 			(width 0)
@@ -4102,7 +4222,17 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 128.27) (xy 171.45 128.27)
+			(xy 60.96 66.04) (xy 60.96 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f716be3f-ef5b-4365-a950-8fdf8552d9d1")
+	)
+	(wire
+		(pts
+			(xy 259.08 147.32) (xy 270.51 147.32)
 		)
 		(stroke
 			(width 0)
@@ -4112,7 +4242,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 132.08) (xy 146.05 132.08)
+			(xy 234.95 151.13) (xy 237.49 151.13)
 		)
 		(stroke
 			(width 0)
@@ -4122,7 +4252,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 83.82) (xy 121.92 83.82)
+			(xy 93.98 82.55) (xy 114.3 82.55)
 		)
 		(stroke
 			(width 0)
@@ -4132,7 +4262,17 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 88.9) (xy 119.38 88.9)
+			(xy 237.49 151.13) (xy 246.38 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcdbbbef-fd91-4126-8633-352afb435835")
+	)
+	(wire
+		(pts
+			(xy 114.3 87.63) (xy 111.76 87.63)
 		)
 		(stroke
 			(width 0)
@@ -4141,7 +4281,7 @@
 		(uuid "fd1084b8-72bc-4c59-9809-e8ac3810ff1f")
 	)
 	(label "3V3"
-		(at 113.03 95.25 0)
+		(at 105.41 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4171,7 +4311,7 @@
 		(uuid "09162455-3bdf-4365-9bc7-97a286f15390")
 	)
 	(label "LOAD_E-"
-		(at 104.14 44.45 180)
+		(at 96.52 43.18 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4237,7 +4377,7 @@
 		)
 	)
 	(label "LOAD_E-"
-		(at 81.28 43.18 0)
+		(at 73.66 41.91 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4247,7 +4387,7 @@
 		(uuid "1d893ab6-9831-4279-bd07-708f1a61e9d5")
 	)
 	(label "HX711_SCK"
-		(at 144.78 48.26 0)
+		(at 144.78 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4369,7 +4509,7 @@
 		)
 	)
 	(label "LOAD_A+"
-		(at 104.14 48.26 180)
+		(at 96.52 46.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4379,7 +4519,7 @@
 		(uuid "3e9f6c2f-d6e4-400f-9f96-cbca79ac0ed1")
 	)
 	(label "LOAD_E+"
-		(at 81.28 40.64 0)
+		(at 73.66 39.37 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4422,7 +4562,7 @@
 		)
 	)
 	(label "ENABLE"
-		(at 67.31 72.39 180)
+		(at 59.69 71.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4432,7 +4572,7 @@
 		)
 		(uuid "4ccbd02c-7955-43f9-9b57-b19198cdf115")
 		(property "Left" ""
-			(at 67.31 73.66 0)
+			(at 59.69 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4445,7 +4585,7 @@
 		)
 	)
 	(label "GND"
-		(at 144.78 40.64 0)
+		(at 137.16 39.37 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4455,7 +4595,7 @@
 		(uuid "54c781fe-1e91-4fc7-8406-c5d4ec113859")
 	)
 	(label "STEP"
-		(at 67.31 95.25 180)
+		(at 52.07 93.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4465,7 +4605,7 @@
 		)
 		(uuid "610b3072-d920-4d0a-858f-6ad55f50b69c")
 		(property "Left" ""
-			(at 67.31 96.52 0)
+			(at 52.07 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4478,7 +4618,7 @@
 		)
 	)
 	(label "DIR"
-		(at 67.31 99.06 180)
+		(at 59.69 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4488,7 +4628,7 @@
 		)
 		(uuid "646989c7-0e58-493a-8550-445a4e94b1e3")
 		(property "Left" ""
-			(at 67.31 100.33 0)
+			(at 59.69 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4511,7 +4651,7 @@
 		(uuid "65a30102-ca4f-4bad-ae4c-13aede24b56c")
 	)
 	(label "LOAD_A-"
-		(at 104.14 52.07 180)
+		(at 96.52 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4521,7 +4661,7 @@
 		(uuid "6e4f50b8-d4eb-48c2-9a95-1149a0a0fbab")
 	)
 	(label "LOAD_A-"
-		(at 81.28 48.26 0)
+		(at 73.66 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4564,7 +4704,7 @@
 		)
 	)
 	(label "ESP32 D33"
-		(at 49.53 45.72 180)
+		(at 41.91 44.45 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4640,7 +4780,7 @@
 		)
 	)
 	(label "GND"
-		(at 134.62 132.08 180)
+		(at 234.95 151.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4650,7 +4790,7 @@
 		)
 		(uuid "9d3c5ac5-4336-4fd3-a057-50f983268a02")
 		(property "Left" ""
-			(at 134.62 133.35 0)
+			(at 234.95 152.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4663,7 +4803,7 @@
 		)
 	)
 	(label "LOAD_A+"
-		(at 81.28 45.72 0)
+		(at 73.66 44.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4729,7 +4869,7 @@
 		)
 	)
 	(label "GND"
-		(at 171.45 132.08 0)
+		(at 271.78 151.13 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4739,7 +4879,7 @@
 		(uuid "b9305ce1-26b6-48cf-8837-c7bd2562f4db")
 	)
 	(label "+24V"
-		(at 113.03 72.39 0)
+		(at 105.41 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4749,7 +4889,7 @@
 		(uuid "bb482534-cfab-4ee5-b45f-8c8b1c4f64e9")
 	)
 	(label "3V3"
-		(at 49.53 43.18 180)
+		(at 41.91 41.91 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4782,7 +4922,7 @@
 		)
 	)
 	(label "3V3"
-		(at 144.78 52.07 0)
+		(at 137.16 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4891,7 +5031,7 @@
 		(uuid "c88eac26-7d1d-45e4-bcdf-db0ab7844c65")
 	)
 	(label "ESP32 D32"
-		(at 49.53 48.26 180)
+		(at 41.91 46.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4901,7 +5041,7 @@
 		(uuid "ca239cc9-b2d3-4edb-a023-9cb9e9ebab5b")
 	)
 	(label "+24V"
-		(at 134.62 128.27 180)
+		(at 234.95 147.32 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4911,7 +5051,7 @@
 		)
 		(uuid "cfaa9a71-1ea6-4a7f-8b96-157b39979024")
 		(property "Left" ""
-			(at 134.62 129.54 0)
+			(at 234.95 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4954,7 +5094,7 @@
 		(uuid "d53545e7-229e-4806-ab0f-3fbd6766bf2a")
 	)
 	(label "GND"
-		(at 113.03 99.06 0)
+		(at 105.41 97.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4987,7 +5127,7 @@
 		)
 	)
 	(label "LOAD_E+"
-		(at 104.14 40.64 180)
+		(at 96.52 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5020,7 +5160,7 @@
 		)
 	)
 	(label "+5V"
-		(at 171.45 128.27 0)
+		(at 271.78 147.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5040,7 +5180,7 @@
 		(uuid "e7d31556-bf6d-484e-8ec4-46644baaf279")
 	)
 	(label "GND"
-		(at 113.03 76.2 0)
+		(at 105.41 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5050,7 +5190,7 @@
 		(uuid "ead1f63e-5b8d-4be1-8e35-b716f523c677")
 	)
 	(label "HX711_DT"
-		(at 144.78 44.45 0)
+		(at 144.78 43.18 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5083,7 +5223,7 @@
 		)
 	)
 	(label "GND"
-		(at 49.53 40.64 180)
+		(at 41.91 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5197,7 +5337,7 @@
 	)
 	(symbol
 		(lib_id "MACK10:HX711_MODULE")
-		(at 123.19 43.18 0)
+		(at 115.57 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5208,7 +5348,7 @@
 		(fields_autoplaced yes)
 		(uuid "13041be5-8f8d-4565-a10f-d029187bfe53")
 		(property "Reference" "U2"
-			(at 123.825 35.56 0)
+			(at 116.205 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5218,7 +5358,7 @@
 			)
 		)
 		(property "Value" "HX711"
-			(at 123.19 43.18 0)
+			(at 115.57 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5228,7 +5368,7 @@
 			)
 		)
 		(property "Footprint" "MACK10:HX711_MODULE"
-			(at 123.444 36.068 0)
+			(at 115.824 34.798 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5239,7 +5379,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 43.18 0)
+			(at 115.57 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5250,7 +5390,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 123.19 43.18 0)
+			(at 115.57 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5381,7 +5521,7 @@
 	)
 	(symbol
 		(lib_id "MACK10:LM2596_MODULE")
-		(at 152.4 129.54 0)
+		(at 252.73 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5391,7 +5531,7 @@
 		(dnp no)
 		(uuid "21577e91-5d73-47a3-81a1-03ca38381dbe")
 		(property "Reference" "U4"
-			(at 152.4 124.714 0)
+			(at 252.73 143.764 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5401,7 +5541,7 @@
 			)
 		)
 		(property "Value" "LM2596 Buck Converter"
-			(at 152.4 136.652 0)
+			(at 252.73 155.702 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5411,7 +5551,7 @@
 			)
 		)
 		(property "Footprint" "MACK10:LM2596_BUCK_CONVERTER"
-			(at 152.4 129.54 0)
+			(at 252.73 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5422,7 +5562,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 129.54 0)
+			(at 252.73 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5433,7 +5573,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 152.4 129.54 0)
+			(at 252.73 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5627,6 +5767,163 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 270.51 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3cd14a1b-f4be-4fee-9bec-ec05587b4214")
+		(property "Reference" "5VO1"
+			(at 273.05 140.2079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP3"
+			(at 273.05 142.7479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 275.59 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 275.59 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 270.51 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ea8e369e-4064-422f-b9c3-48bf43eebab6")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "5VO1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 53.34 104.14 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "46c6b744-297f-4c11-b5ad-65a8a3f3be1c")
+		(property "Reference" "STEP1"
+			(at 50.8 108.7121 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP8"
+			(at 50.8 106.1721 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 48.26 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 53.34 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ca9c4175-d17a-4b49-a15c-834df3534b81")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "STEP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 241.3 109.22 90)
 		(unit 1)
@@ -5708,7 +6005,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 142.24 72.39 0)
+		(at 134.62 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5718,7 +6015,7 @@
 		(dnp no)
 		(uuid "53fb6486-0581-4a00-b162-a63239b0122a")
 		(property "Reference" "C1"
-			(at 139.192 74.93 0)
+			(at 131.572 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5729,7 +6026,7 @@
 			)
 		)
 		(property "Value" "100uF 35V"
-			(at 137.668 66.294 0)
+			(at 130.048 65.024 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5740,7 +6037,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm"
-			(at 143.2052 76.2 0)
+			(at 135.5852 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5751,7 +6048,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 72.39 0)
+			(at 134.62 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5762,7 +6059,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor"
-			(at 142.24 72.39 0)
+			(at 134.62 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5876,6 +6173,85 @@
 			(project "MACK10_Controller"
 				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 60.96 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62dbe64a-20e1-45cb-82e9-dd4a2d9d4221")
+		(property "Reference" "EN1"
+			(at 63.5 61.4679 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP7"
+			(at 63.5 64.0079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 66.04 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 60.96 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3015a756-9d3a-4de9-b883-945ab0e58117")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "EN1")
 					(unit 1)
 				)
 			)
@@ -6045,6 +6421,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 143.51 52.07 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "70fce3e6-da58-414a-9ae7-0bc810abdf6a")
+		(property "Reference" "HXSCK1"
+			(at 146.05 56.6421 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP6"
+			(at 146.05 54.1021 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 148.59 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 143.51 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5dbe716b-0b13-4558-b6e4-0d34fa39b021")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "HXSCK1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 257.81 97.79 0)
 		(unit 1)
@@ -6206,7 +6661,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 127 83.82 0)
+		(at 119.38 82.55 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6217,7 +6672,7 @@
 		(fields_autoplaced yes)
 		(uuid "8d13745e-fa3d-4168-b111-11bf729a7187")
 		(property "Reference" "J1"
-			(at 129.54 83.8199 0)
+			(at 121.92 82.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6228,7 +6683,7 @@
 			)
 		)
 		(property "Value" "Stepper Motor"
-			(at 129.54 86.3599 0)
+			(at 121.92 85.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6239,7 +6694,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
-			(at 127 83.82 0)
+			(at 119.38 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6250,7 +6705,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 127 83.82 0)
+			(at 119.38 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6261,7 +6716,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 127 83.82 0)
+			(at 119.38 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6293,9 +6748,8 @@
 		)
 	)
 	(symbol
-		(lib_name "Conn_01x04_1")
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 60.96 43.18 0)
+		(at 53.34 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6305,7 +6759,7 @@
 		(dnp no)
 		(uuid "90ed8c65-8429-4f21-b584-b26e43a6e46c")
 		(property "Reference" "J5"
-			(at 60.198 36.83 0)
+			(at 52.578 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6316,7 +6770,7 @@
 			)
 		)
 		(property "Value" "SSD1306"
-			(at 56.642 52.07 0)
+			(at 49.022 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6327,7 +6781,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
-			(at 61.214 33.02 0)
+			(at 53.594 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6338,7 +6792,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 43.18 0)
+			(at 53.34 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6349,7 +6803,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 61.722 29.972 0)
+			(at 54.102 28.702 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6375,6 +6829,85 @@
 			(project "MACK10_Controller"
 				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
 					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 237.49 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1c496a6-90ef-41b6-b555-7e24344dadb0")
+		(property "Reference" "24VI1"
+			(at 240.03 138.9379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP5"
+			(at 240.03 141.4779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 242.57 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 237.49 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cbf968f6-1481-4087-a6e4-e1ddca5a74af")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "24VI1")
 					(unit 1)
 				)
 			)
@@ -6544,7 +7077,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 132.08 72.39 0)
+		(at 124.46 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6554,7 +7087,7 @@
 		(dnp no)
 		(uuid "c98f340b-c72a-45e1-8f45-fa9cf7d4b184")
 		(property "Reference" "C2"
-			(at 129.032 74.93 0)
+			(at 121.412 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6565,7 +7098,7 @@
 			)
 		)
 		(property "Value" "100nF 50V"
-			(at 123.444 66.294 0)
+			(at 115.824 65.024 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6576,7 +7109,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
-			(at 133.0452 76.2 0)
+			(at 125.4252 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6587,7 +7120,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 72.39 0)
+			(at 124.46 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6598,7 +7131,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 132.08 72.39 0)
+			(at 124.46 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6618,6 +7151,164 @@
 			(project "MACK10_Controller"
 				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 60.96 104.14 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cf0fdfd4-0730-44e4-b7fe-8de2854141ad")
+		(property "Reference" "SDIR1"
+			(at 63.5 108.7121 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP9"
+			(at 63.5 106.1721 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 66.04 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 60.96 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b9cb9748-5af4-4105-9385-fafb545738e0")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "SDIR1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 172.72 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d79c72ec-f373-4e80-b568-d5532b573dd6")
+		(property "Reference" "3V3"
+			(at 175.26 27.1779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP1"
+			(at 175.26 29.7179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 177.8 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 172.72 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7396d649-9eb4-41e6-982e-187ed015b9c0")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "3V3")
 					(unit 1)
 				)
 			)
@@ -6798,7 +7489,7 @@
 	)
 	(symbol
 		(lib_id "MACK10:TMC2208_STEPSTICK")
-		(at 88.9 74.93 0)
+		(at 81.28 73.66 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6808,7 +7499,7 @@
 		(dnp no)
 		(uuid "ed78b60f-c1e8-4b8f-b589-f933e3f68124")
 		(property "Reference" "U3"
-			(at 91.44 67.31 0)
+			(at 83.82 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6818,7 +7509,7 @@
 			)
 		)
 		(property "Value" "TMC2208"
-			(at 91.44 75.946 0)
+			(at 83.82 74.676 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6828,7 +7519,7 @@
 			)
 		)
 		(property "Footprint" "MACK10:TMC2208_STEPSTICK"
-			(at 88.9 74.93 0)
+			(at 81.28 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6839,7 +7530,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 74.93 0)
+			(at 81.28 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6850,7 +7541,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 88.9 74.93 0)
+			(at 81.28 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7092,7 +7783,7 @@
 	)
 	(symbol
 		(lib_id "MACK10:LOAD_CELL_4P")
-		(at 74.93 36.83 0)
+		(at 67.31 35.56 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7102,7 +7793,7 @@
 		(dnp no)
 		(uuid "f4bad60f-2bdf-4f28-9b97-e6f66a19333d")
 		(property "Reference" "J3"
-			(at 73.66 36.83 0)
+			(at 66.04 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7112,7 +7803,7 @@
 			)
 		)
 		(property "Value" "Load Cell"
-			(at 75.184 51.816 0)
+			(at 67.564 50.546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7122,7 +7813,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
-			(at 74.93 36.83 0)
+			(at 67.31 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7133,7 +7824,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 36.83 0)
+			(at 67.31 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7144,7 +7835,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 74.93 36.83 0)
+			(at 67.31 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7170,6 +7861,164 @@
 			(project "MACK10_Controller"
 				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 143.51 31.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f67582ec-5436-4d70-bf21-a16f9e32b1eb")
+		(property "Reference" "HXDT1"
+			(at 146.05 27.1779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP2"
+			(at 146.05 29.7179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 148.59 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 143.51 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2d799d9a-8159-4faa-a048-01c6a244cc74")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "HXDT1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 237.49 158.75 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fc28ce77-f9bf-43e7-87c8-966292e24b6a")
+		(property "Reference" "GND1"
+			(at 240.03 163.3221 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP4"
+			(at 240.03 160.7821 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 242.57 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 237.49 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "813dbf02-e849-4fbb-b7c7-7d6f141f6789")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "GND1")
 					(unit 1)
 				)
 			)
