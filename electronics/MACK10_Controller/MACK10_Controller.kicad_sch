@@ -5707,7 +5707,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LIMIT_BOTTOM"
+		(property "Value" "LIM_BOT"
 			(at 260.35 111.7599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5778,7 +5778,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3cd14a1b-f4be-4fee-9bec-ec05587b4214")
-		(property "Reference" "5VO1"
+		(property "Reference" "5VOUT1"
 			(at 273.05 140.2079 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5839,7 +5839,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
-					(reference "5VO1")
+					(reference "5VOUT1")
 					(unit 1)
 				)
 			)
@@ -6522,7 +6522,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LIMIT_TOP"
+		(property "Value" "LIM_TOP"
 			(at 260.35 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6846,7 +6846,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1c496a6-90ef-41b6-b555-7e24344dadb0")
-		(property "Reference" "24VI1"
+		(property "Reference" "24VIN1"
 			(at 240.03 138.9379 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6907,7 +6907,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
-					(reference "24VI1")
+					(reference "24VIN1")
 					(unit 1)
 				)
 			)
@@ -6936,7 +6936,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "24V POWER INPUT"
+		(property "Value" "24V IN"
 			(at 200.66 130.8099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7337,7 +7337,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "POWER SWITCH"
+		(property "Value" "I/O"
 			(at 256.54 134.6199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7418,7 +7418,7 @@
 				)
 			)
 		)
-		(property "Value" "STATUS LED"
+		(property "Value" "STATUS"
 			(at 249.2375 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7630,7 +7630,7 @@
 				)
 			)
 		)
-		(property "Value" "POWER LED"
+		(property "Value" "POWER"
 			(at 249.2375 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
