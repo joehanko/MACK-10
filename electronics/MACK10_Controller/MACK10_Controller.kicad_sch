@@ -1113,158 +1113,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Fuse"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "F"
-				(at 2.032 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Fuse"
-				(at -1.905 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Fuse"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "fuse"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "*Fuse*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Fuse_0_1"
-				(rectangle
-					(start -0.762 -2.54)
-					(end 0.762 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Fuse_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -1589,6 +1437,172 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Jumper:Jumper_2_Open"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "JP"
+				(at 0 2.794 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Jumper_2_Open"
+				(at 0 -2.286 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Jumper, 2-pole, open"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Jumper SPST"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Jumper_2_Open_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_2_Open_0_1"
+				(arc
+					(start -1.524 1.27)
+					(mid 0 1.778)
+					(end 1.524 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_2_Open_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "B"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3323,6 +3337,18 @@
 		(uuid "3dd840d5-316e-43d3-8a7d-8bd7863497c5")
 	)
 	(junction
+		(at 240.03 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "53223d64-f409-4fd5-bf86-12f5166499bb")
+	)
+	(junction
+		(at 229.87 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83ffcc6c-2d77-412f-ad72-f600ff301506")
+	)
+	(junction
 		(at 60.96 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3502,7 +3528,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 109.22) (xy 252.73 109.22)
+			(xy 238.76 109.22) (xy 246.38 109.22)
 		)
 		(stroke
 			(width 0)
@@ -3582,7 +3608,7 @@
 	)
 	(wire
 		(pts
-			(xy 254 128.27) (xy 264.16 128.27)
+			(xy 255.27 123.19) (xy 265.43 123.19)
 		)
 		(stroke
 			(width 0)
@@ -3732,7 +3758,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 128.27) (xy 251.46 128.27)
+			(xy 236.22 123.19) (xy 240.03 123.19)
 		)
 		(stroke
 			(width 0)
@@ -3759,6 +3785,16 @@
 			(type default)
 		)
 		(uuid "52d365bf-8e29-4782-b000-c2497b5460c8")
+	)
+	(wire
+		(pts
+			(xy 240.03 123.19) (xy 252.73 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54bbd157-9476-49ea-95bc-6a0cd086f94b")
 	)
 	(wire
 		(pts
@@ -3852,6 +3888,16 @@
 	)
 	(wire
 		(pts
+			(xy 229.87 123.19) (xy 229.87 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "769dcae9-0ef9-44f6-aaa6-00321135d305")
+	)
+	(wire
+		(pts
 			(xy 208.28 62.23) (xy 217.17 62.23)
 		)
 		(stroke
@@ -3932,6 +3978,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 123.19) (xy 240.03 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b049e65-e6f1-4c98-a56a-ef20e99ceb91")
+	)
+	(wire
+		(pts
 			(xy 41.91 44.45) (xy 48.26 44.45)
 		)
 		(stroke
@@ -3942,7 +3998,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 97.79) (xy 252.73 97.79)
+			(xy 238.76 97.79) (xy 246.38 97.79)
 		)
 		(stroke
 			(width 0)
@@ -4029,6 +4085,16 @@
 			(type default)
 		)
 		(uuid "b2ec72e6-c2fa-4cb6-8bc1-c3e9b17cd7ba")
+	)
+	(wire
+		(pts
+			(xy 229.87 123.19) (xy 233.68 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b38ed2f8-e362-41a1-93a7-704497850f01")
 	)
 	(wire
 		(pts
@@ -4209,6 +4275,16 @@
 			(type default)
 		)
 		(uuid "f1d29ba2-2057-47de-b7ea-538aad4ef743")
+	)
+	(wire
+		(pts
+			(xy 222.25 123.19) (xy 229.87 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f52e17cf-09c2-49c8-86dc-11674f4ad74c")
 	)
 	(wire
 		(pts
@@ -4420,7 +4496,7 @@
 		)
 	)
 	(label "+24V"
-		(at 264.16 128.27 0)
+		(at 265.43 123.19 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4486,7 +4562,7 @@
 		)
 	)
 	(label "ESP32 D35"
-		(at 237.49 97.79 180)
+		(at 231.14 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4496,7 +4572,7 @@
 		)
 		(uuid "3884d67f-e802-438a-b189-ccb9d2aca27a")
 		(property "Left" ""
-			(at 237.49 99.06 0)
+			(at 231.14 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4529,7 +4605,7 @@
 		(uuid "49319636-299d-4956-80c4-0856fa0eab42")
 	)
 	(label "24V INPUT"
-		(at 236.22 128.27 180)
+		(at 222.25 123.19 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4813,7 +4889,7 @@
 		(uuid "a5507b06-9a89-44eb-8248-ba36adb58565")
 	)
 	(label "ESP32 D34"
-		(at 237.49 109.22 180)
+		(at 231.14 109.22 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4823,7 +4899,7 @@
 		)
 		(uuid "a5ed7ce0-2db6-4670-b647-720942ada774")
 		(property "Left" ""
-			(at 237.49 110.49 0)
+			(at 231.14 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4836,7 +4912,7 @@
 		)
 	)
 	(label "GND"
-		(at 208.28 130.81 0)
+		(at 195.58 125.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4955,7 +5031,7 @@
 		)
 	)
 	(label "GND"
-		(at 252.73 100.33 180)
+		(at 246.38 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4965,7 +5041,7 @@
 		)
 		(uuid "c164bcb0-02cd-42bd-ba5a-763ca9e19ff6")
 		(property "Left" ""
-			(at 252.73 101.6 0)
+			(at 246.38 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4978,7 +5054,7 @@
 		)
 	)
 	(label "24V INPUT"
-		(at 208.28 128.27 0)
+		(at 195.58 123.19 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4988,7 +5064,7 @@
 		(uuid "c176caf9-3c96-4d1c-aba2-e69e68251228")
 	)
 	(label "GND"
-		(at 252.73 111.76 180)
+		(at 246.38 111.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4998,7 +5074,7 @@
 		)
 		(uuid "c1b8d1bf-3fd8-4c46-88d4-754a7370158e")
 		(property "Left" ""
-			(at 252.73 113.03 0)
+			(at 246.38 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5287,7 +5363,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 234.95 88.138 90)
 			(hide yes)
 			(show_name no)
@@ -5441,7 +5517,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 241.3 97.79 90)
+		(at 234.95 97.79 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5452,7 +5528,7 @@
 		(fields_autoplaced yes)
 		(uuid "165a0bc0-35e8-4b96-838b-b2ad0fcef2ad")
 		(property "Reference" "R2"
-			(at 241.3 91.44 90)
+			(at 234.95 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5462,7 +5538,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 241.3 93.98 90)
+			(at 234.95 93.98 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5471,8 +5547,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 241.3 99.568 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 234.95 99.568 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5483,7 +5559,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 97.79 0)
+			(at 234.95 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5494,7 +5570,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 241.3 97.79 0)
+			(at 234.95 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5605,8 +5681,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Fuse")
-		(at 240.03 128.27 90)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 233.68 118.11 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5617,27 +5693,29 @@
 		(fields_autoplaced yes)
 		(uuid "275e944d-b0c2-4d8f-8501-779f3fd22d01")
 		(property "Reference" "F1"
-			(at 240.03 121.92 90)
+			(at 238.76 116.8399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "2A Fuse"
-			(at 240.03 124.46 90)
+			(at 238.76 119.3799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Fuse:Fuseholder_Blade_Mini_Keystone_3568"
-			(at 240.03 130.048 90)
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+			(at 233.68 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5648,7 +5726,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 240.03 128.27 0)
+			(at 233.68 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5658,8 +5736,8 @@
 				)
 			)
 		)
-		(property "Description" "Fuse"
-			(at 240.03 128.27 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 233.68 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5686,7 +5764,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 257.81 109.22 0)
+		(at 251.46 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5697,7 +5775,7 @@
 		(fields_autoplaced yes)
 		(uuid "3c8ed198-20f0-42c4-b628-6d53617866ce")
 		(property "Reference" "J9"
-			(at 260.35 109.2199 0)
+			(at 254 109.2199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5708,7 +5786,7 @@
 			)
 		)
 		(property "Value" "LIM_BOT"
-			(at 260.35 111.7599 0)
+			(at 254 111.7599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5719,7 +5797,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
-			(at 257.81 109.22 0)
+			(at 251.46 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5730,7 +5808,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 257.81 109.22 0)
+			(at 251.46 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5741,7 +5819,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 257.81 109.22 0)
+			(at 251.46 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5924,8 +6002,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 241.3 109.22 90)
+		(lib_id "Jumper:Jumper_2_Open")
+		(at 234.95 124.46 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5933,10 +6012,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4b466579-0b7d-4ac1-90e9-e549ce02dbc4")
-		(property "Reference" "R3"
-			(at 241.3 102.87 90)
+		(uuid "46cde8ab-02c6-420f-a55f-795ddfcb944a")
+		(property "Reference" "JP1"
+			(at 234.95 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5945,8 +6023,8 @@
 				)
 			)
 		)
-		(property "Value" "10k"
-			(at 241.3 105.41 90)
+		(property "Value" "FUSE_BYPASS"
+			(at 234.95 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5955,8 +6033,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 241.3 110.998 90)
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm"
+			(at 234.95 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5967,7 +6045,87 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 109.22 0)
+			(at 234.95 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Jumper, 2-pole, open"
+			(at 234.95 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0a5f1668-a7ac-4179-a6a6-5d7a35823bc0")
+		)
+		(pin "2"
+			(uuid "85587e4f-c570-41f5-8ced-13bc9ee0ec5d")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/ab42f44a-5ab9-4a28-b026-e4608900329e"
+					(reference "JP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 234.95 109.22 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b466579-0b7d-4ac1-90e9-e549ce02dbc4")
+		(property "Reference" "R3"
+			(at 234.95 102.87 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 234.95 105.41 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 234.95 110.998 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5978,7 +6136,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 241.3 109.22 0)
+			(at 234.95 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6036,7 +6194,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm"
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x5.4"
 			(at 135.5852 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -6501,7 +6659,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 257.81 97.79 0)
+		(at 251.46 97.79 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6512,7 +6670,7 @@
 		(fields_autoplaced yes)
 		(uuid "78af699f-9fef-4a9d-8ad9-760fd297cda1")
 		(property "Reference" "J8"
-			(at 260.35 97.7899 0)
+			(at 254 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6523,7 +6681,7 @@
 			)
 		)
 		(property "Value" "LIM_TOP"
-			(at 260.35 100.3299 0)
+			(at 254 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6534,7 +6692,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
-			(at 257.81 97.79 0)
+			(at 251.46 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6545,7 +6703,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 257.81 97.79 0)
+			(at 251.46 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6556,7 +6714,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 257.81 97.79 0)
+			(at 251.46 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6583,7 +6741,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 264.16 128.27 0)
+		(at 265.43 123.19 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6594,7 +6752,7 @@
 		(fields_autoplaced yes)
 		(uuid "82788d45-38ba-43aa-a2bd-172d02029dfb")
 		(property "Reference" "#FLG01"
-			(at 264.16 126.365 0)
+			(at 265.43 121.285 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6605,7 +6763,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 264.16 123.19 0)
+			(at 265.43 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6615,7 +6773,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 264.16 128.27 0)
+			(at 265.43 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6626,7 +6784,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 264.16 128.27 0)
+			(at 265.43 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6637,7 +6795,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 264.16 128.27 0)
+			(at 265.43 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6915,7 +7073,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 203.2 128.27 0)
+		(at 190.5 123.19 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -6926,7 +7084,7 @@
 		(dnp no)
 		(uuid "a66c25a8-afd4-465f-870e-8a7dff28a565")
 		(property "Reference" "J4"
-			(at 200.66 128.2699 0)
+			(at 187.96 123.1899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6937,7 +7095,7 @@
 			)
 		)
 		(property "Value" "24V IN"
-			(at 200.66 130.8099 0)
+			(at 187.96 125.7299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6948,7 +7106,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
-			(at 203.2 128.27 0)
+			(at 190.5 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6959,7 +7117,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.2 128.27 0)
+			(at 190.5 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6970,7 +7128,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 203.2 128.27 0)
+			(at 190.5 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7027,7 +7185,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 234.95 76.708 90)
 			(hide yes)
 			(show_name no)
@@ -7108,7 +7266,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 125.4252 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -7316,7 +7474,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 254 133.35 270)
+		(at 255.27 128.27 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7327,7 +7485,7 @@
 		(fields_autoplaced yes)
 		(uuid "e079ba4b-0715-4b44-a058-3ac20cc44611")
 		(property "Reference" "J10"
-			(at 256.54 132.0799 90)
+			(at 257.81 126.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7338,7 +7496,7 @@
 			)
 		)
 		(property "Value" "I/O"
-			(at 256.54 134.6199 90)
+			(at 257.81 129.5399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7348,8 +7506,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 254 133.35 0)
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+			(at 255.27 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7360,7 +7518,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 254 133.35 0)
+			(at 255.27 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7371,7 +7529,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 254 133.35 0)
+			(at 255.27 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
