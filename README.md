@@ -43,6 +43,10 @@ MACK-10 explores how modern maker hardware—including microcontrollers, afforda
 
 ## Electronics
 
+<p align="center">
+  <img src="images/MACK10_Controller_Rendered_v1.png" width="900" alt="MACK-10 Banner">
+</p>
+
 ### Controller Hardware
 
 - [x] Custom KiCad PCB
