@@ -528,21 +528,171 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "name": "Analog",
+        "pcb_color": "rgb(0, 255, 0)",
+        "priority": 4,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
+      },
+      {
+        "name": "Digital",
+        "pcb_color": "rgb(0, 0, 255)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
+      },
+      {
+        "name": "Inputs",
+        "pcb_color": "rgb(194, 0, 194)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
+      },
+      {
+        "name": "Motor",
+        "pcb_color": "rgb(255, 0, 0)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
+      },
+      {
+        "name": "Power",
+        "pcb_color": "rgb(255, 153, 0)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
       }
     ],
     "meta": {
       "version": 5
     },
-    "net_colors": null,
+    "net_colors": {
+      "/+24V": "rgb(255, 255, 0)"
+    },
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Power",
+        "pattern": "+24V"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+5V"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "3V3"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "STEP"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "DIR"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "EN"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "SCL"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "SDA"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "OLED_RST"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/LOAD_A+"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/LOAD_A-"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/LOAD_E+"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/LOAD_E-"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "/HX711_DT"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "/HX711_SCK"
+      },
+      {
+        "netclass": "Motor",
+        "pattern": "Net-(J1-Pin_1)"
+      },
+      {
+        "netclass": "Motor",
+        "pattern": "Net-(J1-Pin_2)"
+      },
+      {
+        "netclass": "Motor",
+        "pattern": "Net-(J1-Pin_3)"
+      },
+      {
+        "netclass": "Motor",
+        "pattern": "Net-(J1-Pin_4)"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": "BACK"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": "UP"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": "DOWN"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": "SELECT"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": "ESP32 D25"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": "ESP32 D34"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": "ESP32 D35"
+      },
+      {
+        "netclass": "Inputs",
+        "pattern": ""
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
       "idf": "",
       "netlist": "",
       "plot": "../../../../../../../../../../../Downloads/Gerbers/",
-      "specctra_dsn": "../../../../../../../../../../../Downloads/MACK10_Controller.dsn",
+      "specctra_dsn": "../../../../../../../../../../../Downloads/MACK10_Controller_Tracing.dsn",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -683,7 +833,7 @@
         "uuid": "ab42f44a-5ab9-4a28-b026-e4608900329e"
       }
     ],
-    "used_designators": "EN1,24VIN1,STEP1,5VOUT1,R1-4,TP_5VO1,C1-2,SDIR1,TP_HXSCK1,U1-4,SW1-7,TP_SDIR1,HXDT1,TP1-3,TP5-9,TP_GND1,GND1,TP_EN1,F1,HXSCK1,D1-2,M1,TP_STEP1,J1-3,J5-11,JP1,TP_24VI1,#FLG1,TP_HXDT1",
+    "used_designators": "EN1,24VIN1,STEP1,TP_5VO1,R1-4,5VOUT1,TP_HXSCK1,U1-4,SW1-7,C1-2,SDIR1,TP_SDIR1,TP1-3,TP5-9,HXDT1,TP_GND1,GND1,TP_EN1,F1,HXSCK1,D1-2,TP_STEP1,M1,JP1,J1-3,J5-11,TP_24VI1,#FLG1,TP_HXDT1",
     "variants": []
   },
   "sheets": [
