@@ -691,7 +691,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "../../../../../../../../../../../Downloads/Gerbers/",
+      "plot": "gerbers/",
       "specctra_dsn": "../../../../../../../../../../../Downloads/MACK10_Controller_Tracing_check.dsn",
       "vrml": ""
     },
