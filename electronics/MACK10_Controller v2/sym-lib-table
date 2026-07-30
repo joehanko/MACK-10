@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "MACK10") (type "KiCad") (uri "${KIPRJMOD}/MACK10.kicad_sym") (options "") (descr ""))
+)
