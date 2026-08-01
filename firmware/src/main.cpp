@@ -34,12 +34,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 HX711 scale;
 
 // Temporary demo conversion.
-//
-// Example:
-// 1000 HX711 counts = approximately 1 displayed newton.
-//
-// This is NOT a real calibration. Adjust it if the displayed
-// force rises too quickly or too slowly when you press the cell.
+// This is not a real calibration.
 constexpr float DEMO_COUNTS_PER_NEWTON = 500.0f;
 
 // Force at which the demo declares that the specimen broke.
@@ -48,14 +43,27 @@ constexpr float BREAK_THRESHOLD_N = 20.0f;
 // Ignore tiny unloaded fluctuations.
 constexpr float ZERO_DEADBAND_N = 0.15f;
 
+// =====================================================
+// Timing
+// =====================================================
+
 unsigned long lastSerialPrintMs = 0;
 constexpr unsigned long SERIAL_PRINT_INTERVAL_MS = 100;
+
+unsigned long lastDisplayUpdateMs = 0;
+
+// Update the OLED 10 times per second instead of continuously.
+constexpr unsigned long DISPLAY_UPDATE_INTERVAL_MS = 100;
 
 // =====================================================
 // Test state
 // =====================================================
 
-enum TestState { TEST_RUNNING, BREAK_DETECTED };
+enum TestState
+{
+  TEST_RUNNING,
+  BREAK_DETECTED
+};
 
 TestState testState = TEST_RUNNING;
 
@@ -75,20 +83,25 @@ bool stableButtonState = HIGH;
 unsigned long lastButtonChangeMs = 0;
 constexpr unsigned long DEBOUNCE_MS = 40;
 
-// Returns true once for each completed button press.
-bool buttonPressed() {
-  bool rawButton = digitalRead(BUTTON_PIN);
+// Returns true once each time the button is pressed.
+bool buttonPressed()
+{
+  const bool rawButton = digitalRead(BUTTON_PIN);
 
-  if (rawButton != previousRawButton) {
+  if (rawButton != previousRawButton)
+  {
     previousRawButton = rawButton;
     lastButtonChangeMs = millis();
   }
 
-  if (millis() - lastButtonChangeMs >= DEBOUNCE_MS) {
-    if (rawButton != stableButtonState) {
+  if (millis() - lastButtonChangeMs >= DEBOUNCE_MS)
+  {
+    if (rawButton != stableButtonState)
+    {
       stableButtonState = rawButton;
 
-      if (stableButtonState == LOW) {
+      if (stableButtonState == LOW)
+      {
         return true;
       }
     }
@@ -101,26 +114,39 @@ bool buttonPressed() {
 // Display functions
 // =====================================================
 
-void drawLoadBar(float currentForce) {
+void drawLoadBar(float currentForce)
+{
   constexpr int BAR_X = 4;
   constexpr int BAR_Y = 43;
   constexpr int BAR_WIDTH = 120;
   constexpr int BAR_HEIGHT = 14;
 
-  display.drawRect(BAR_X, BAR_Y, BAR_WIDTH, BAR_HEIGHT, SSD1306_WHITE);
+  display.drawRect(
+      BAR_X,
+      BAR_Y,
+      BAR_WIDTH,
+      BAR_HEIGHT,
+      SSD1306_WHITE);
 
   float fraction = currentForce / BREAK_THRESHOLD_N;
   fraction = constrain(fraction, 0.0f, 1.0f);
 
-  int fillWidth = static_cast<int>(fraction * (BAR_WIDTH - 4));
+  const int fillWidth =
+      static_cast<int>(fraction * (BAR_WIDTH - 4));
 
-  if (fillWidth > 0) {
-    display.fillRect(BAR_X + 2, BAR_Y + 2, fillWidth, BAR_HEIGHT - 4,
-                     SSD1306_WHITE);
+  if (fillWidth > 0)
+  {
+    display.fillRect(
+        BAR_X + 2,
+        BAR_Y + 2,
+        fillWidth,
+        BAR_HEIGHT - 4,
+        SSD1306_WHITE);
   }
 }
 
-void drawRunningScreen() {
+void drawRunningScreen()
+{
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
 
@@ -139,6 +165,7 @@ void drawRunningScreen() {
   display.setTextSize(1);
   display.setCursor(80, 20);
   display.print("Peak");
+
   display.setCursor(80, 30);
   display.print(peakForceN, 1);
   display.print("N");
@@ -148,7 +175,8 @@ void drawRunningScreen() {
   display.display();
 }
 
-void drawBreakScreen() {
+void drawBreakScreen()
+{
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
 
@@ -156,7 +184,11 @@ void drawBreakScreen() {
   display.setCursor(20, 0);
   display.println("BREAK DETECTED");
 
-  display.drawFastHLine(0, 10, 128, SSD1306_WHITE);
+  display.drawFastHLine(
+      0,
+      10,
+      SCREEN_WIDTH,
+      SSD1306_WHITE);
 
   display.setTextSize(2);
   display.setCursor(10, 17);
@@ -173,7 +205,8 @@ void drawBreakScreen() {
   display.display();
 }
 
-void drawTaringScreen() {
+void drawTaringScreen()
+{
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
 
@@ -191,7 +224,10 @@ void drawTaringScreen() {
 // Test control
 // =====================================================
 
-void startNewTest() {
+void startNewTest()
+{
+  Serial.println("Starting new test and taring...");
+
   drawTaringScreen();
 
   delay(750);
@@ -203,11 +239,21 @@ void startNewTest() {
   breakForceN = 0.0f;
 
   testState = TEST_RUNNING;
+
+  lastDisplayUpdateMs = millis();
+  drawRunningScreen();
+
+  Serial.println("Test ready.");
 }
 
-void triggerBreak() {
+void triggerBreak()
+{
   breakForceN = peakForceN;
   testState = BREAK_DETECTED;
+
+  Serial.print("Break detected at ");
+  Serial.print(breakForceN, 2);
+  Serial.println(" N");
 
   drawBreakScreen();
 }
@@ -216,35 +262,53 @@ void triggerBreak() {
 // Setup
 // =====================================================
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   delay(300);
+
   Serial.println("MACK-10 starting...");
 
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 
-  Wire.begin(OLED_SDA_PIN, OLED_SCL_PIN);
+  previousRawButton = digitalRead(BUTTON_PIN);
+  stableButtonState = previousRawButton;
+  lastButtonChangeMs = millis();
 
-  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDRESS)) {
-    while (true) {
+  Wire.begin(OLED_SDA_PIN, OLED_SCL_PIN);
+  Wire.setClock(100000);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDRESS))
+  {
+    Serial.println("OLED initialization failed.");
+
+    while (true)
+    {
       delay(1000);
     }
   }
 
+  // Maximum OLED contrast.
+  display.ssd1306_command(SSD1306_SETCONTRAST);
+  display.ssd1306_command(0xFF);
+
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
   display.setTextSize(1);
+
   display.setCursor(16, 20);
   display.println("TENSILE TESTER");
 
   display.setCursor(34, 38);
   display.println("STARTING");
+
   display.display();
 
   scale.begin(HX711_DT_PIN, HX711_SCK_PIN);
 
-  while (!scale.wait_ready_timeout(1000)) {
-    // Wait silently for the HX711.
+  while (!scale.wait_ready_timeout(1000))
+  {
+    Serial.println("Waiting for HX711...");
   }
 
   startNewTest();
@@ -254,50 +318,69 @@ void setup() {
 // Main loop
 // =====================================================
 
-void loop() {
-  bool pressed = buttonPressed();
+void loop()
+{
+  // Button restarts and tares the tester at any time.
+  if (buttonPressed())
+  {
+    Serial.println("Button pressed.");
 
-  // After a simulated break, one button press starts over.
-  if (testState == BREAK_DETECTED) {
-    if (pressed) {
-      startNewTest();
-    }
-
+    startNewTest();
     return;
   }
 
-  if (!scale.is_ready()) {
+  // Hold the break screen until the button is pressed.
+  if (testState == BREAK_DETECTED)
+  {
     return;
   }
 
-  long rawReading = scale.read();
-  long relativeCounts = rawReading - zeroOffset;
+  if (!scale.is_ready())
+  {
+    return;
+  }
 
-  // Absolute value allows either compression or tension
-  // to trigger the demo.
-  forceN = abs(static_cast<float>(relativeCounts)) / DEMO_COUNTS_PER_NEWTON;
+  const long rawReading = scale.read();
+  const long relativeCounts = rawReading - zeroOffset;
 
-  if (forceN < ZERO_DEADBAND_N) {
+  // Absolute value allows either compression or tension.
+  forceN =
+      abs(static_cast<float>(relativeCounts)) /
+      DEMO_COUNTS_PER_NEWTON;
+
+  if (forceN < ZERO_DEADBAND_N)
+  {
     forceN = 0.0f;
   }
 
-  if (forceN > peakForceN) {
+  if (forceN > peakForceN)
+  {
     peakForceN = forceN;
   }
 
-  if (millis() - lastSerialPrintMs >= SERIAL_PRINT_INTERVAL_MS) {
+  if (millis() - lastSerialPrintMs >=
+      SERIAL_PRINT_INTERVAL_MS)
+  {
     lastSerialPrintMs = millis();
 
     Serial.print("Force:");
     Serial.print(forceN, 2);
+
     Serial.print(",Peak:");
     Serial.println(peakForceN, 2);
   }
 
-  if (forceN >= BREAK_THRESHOLD_N) {
+  if (forceN >= BREAK_THRESHOLD_N)
+  {
     triggerBreak();
     return;
   }
 
-  drawRunningScreen();
+  // Only redraw the OLED 10 times per second.
+  if (millis() - lastDisplayUpdateMs >=
+      DISPLAY_UPDATE_INTERVAL_MS)
+  {
+    lastDisplayUpdateMs = millis();
+    drawRunningScreen();
+  }
 }
