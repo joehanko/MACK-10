@@ -55,7 +55,7 @@ MACK-10 explores how modern maker hardware—including microcontrollers, afforda
 - [x] TMC2208 Stepper Driver
 - [x] LM2596 Power Module
 - [x] OLED Display
-- [x] Emergency Stop Circuit
+- [x] E-Stop Circuit
 - [x] Dual Limit Switch Inputs
 - [x] Modular JST Wiring
 
