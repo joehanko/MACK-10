@@ -1,6 +1,6 @@
-# MACK-10 TODO
+## MACK-10 TODO - V1
 
-## Schematic
+### Schematic
 
 - [ ] Finish ESP32 wiring
 - [ ] Finish limit switch circuitry
@@ -9,7 +9,7 @@
 - [ ] Run ERC with zero errors
 - [ ] Assign footprints
 
-## PCB Layout
+### PCB Layout
 
 - [ ] Update PCB from schematic
 - [ ] Connect duplicated ESP32 breakout pads (socket ↔ breakout header)
@@ -20,7 +20,7 @@
 - [ ] Run DRC
 - [ ] Review silkscreen
 
-## Prototype
+### Prototype
 
 - [ ] Order Rev A PCBs
 - [ ] Assemble board
@@ -28,3 +28,8 @@
 - [ ] Program ESP32
 - [ ] Verify HX711
 - [ ] Verify stepper driver
+
+## MACK-10 TODO - V2
+
+- [ ] Move ESP32 Right Header 2.54mm x+, to ensure proper seat of ESP32
+- [ ]
