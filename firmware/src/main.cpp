@@ -9,11 +9,11 @@
 // Pins
 // =====================================================
 
-constexpr int HX711_DT_PIN = 4;
-constexpr int HX711_SCK_PIN = 5;
+constexpr int HX711_DT_PIN = 21;
+constexpr int HX711_SCK_PIN = 22;
 
-constexpr int OLED_SDA_PIN = 21;
-constexpr int OLED_SCL_PIN = 22;
+constexpr int OLED_SDA_PIN = 32;
+constexpr int OLED_SCL_PIN = 33;
 
 constexpr int BUTTON_PIN = 18;
 
