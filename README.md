@@ -39,12 +39,21 @@ MACK-10 explores how modern maker hardware—including microcontrollers, afforda
 
 # Current Status
 
-🚧 **Prototype Development (Revision 0.1)**
+🚧 **Prototype Development (Revision 1.0)**
+
+<p align="center">
+  <img src="images/Update 1.png" width="900" alt="MACK-10 Banner">
+</p>
 
 ## Electronics
 
 <p align="center">
-  <img src="images/MACK10_Controller_Rendered_v1.png" width="900" alt="MACK-10 Banner">
+  <img src="images/render2.png" width="455" alt="MACK-10 Banner">
+  <img src="images/DFM.png" width="450" alt="MACK-10 Banner">
+</p>
+
+<p align="center">
+
 </p>
 
 ### Controller Hardware
