@@ -48,7 +48,7 @@ MACK-10 explores how modern maker hardware—including microcontrollers, afforda
 ## Electronics
 
 <p align="center">
-  <img src="images/render2.png" width="455" alt="MACK-10 Banner">
+  <img src="images/Render2.png" width="455" alt="MACK-10 Banner">
   <img src="images/DFM.png" width="450" alt="MACK-10 Banner">
 </p>
 
