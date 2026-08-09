@@ -3,52 +3,22 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#include "HX711.h"
+// =====================================================
+// MACK-10 SMOOTH MOTOR + OLED TEST
+// ESP32 Arduino Core 2.x
+// TMC2208 hardware STEP generation with LEDC
+// =====================================================
 
 // =====================================================
 // Pins
 // =====================================================
 
-constexpr int HX711_DT_PIN = 21;
-constexpr int HX711_SCK_PIN = 22;
+constexpr int ENABLE_PIN = 5;
+constexpr int STEP_PIN = 18;
+constexpr int DIR_PIN = 19;
 
 constexpr int OLED_SDA_PIN = 32;
 constexpr int OLED_SCL_PIN = 33;
-
-// J6 pin 4 -> SELECT -> GPIO14
-constexpr int SELECT_BUTTON_PIN = 14;
-
-constexpr int STATUS_LED_PIN = 4;
-
-// =====================================================
-// Demo timing
-// =====================================================
-
-constexpr unsigned long AUTO_START_DELAY_MS = 5000;
-constexpr unsigned long BREAK_SCREEN_DELAY_MS = 5000;
-
-unsigned long menuStartMs = 0;
-unsigned long breakDetectedMs = 0;
-
-// =====================================================
-// Dog animation timing
-// =====================================================
-
-unsigned long lastDogFrameMs = 0;
-constexpr unsigned long DOG_FRAME_INTERVAL_MS = 250;
-
-bool dogFrame = false;
-
-// =====================================================
-// Status LED pulse
-// =====================================================
-
-int statusBrightness = 5;
-int statusFadeAmount = 2;
-
-unsigned long lastStatusFadeMs = 0;
-
-constexpr unsigned long STATUS_FADE_INTERVAL_MS = 15;
 
 // =====================================================
 // OLED
@@ -56,7 +26,6 @@ constexpr unsigned long STATUS_FADE_INTERVAL_MS = 15;
 
 constexpr int SCREEN_WIDTH = 128;
 constexpr int SCREEN_HEIGHT = 64;
-
 constexpr uint8_t OLED_ADDRESS = 0x3C;
 
 Adafruit_SSD1306 display(
@@ -66,1013 +35,514 @@ Adafruit_SSD1306 display(
     -1);
 
 // =====================================================
-// HX711
+// Motion settings
 // =====================================================
 
-HX711 scale;
+constexpr int START_STEP_HZ = 250;
+constexpr int MAX_STEP_HZ = 2000;
 
-// TEMPORARY demo calibration.
-// Replace this after real load-cell calibration.
-constexpr float DEMO_COUNTS_PER_NEWTON = 500.0f;
+constexpr unsigned long ACCEL_TIME_MS = 2500;
+constexpr unsigned long CRUISE_TIME_MS = 3000;
+constexpr unsigned long DECEL_TIME_MS = 2500;
 
-// Demo break threshold in either direction.
-constexpr float BREAK_THRESHOLD_N = 50.0f;
+constexpr unsigned long DIRECTION_PAUSE_MS = 1500;
 
-// Ignore tiny unloaded fluctuations around zero.
-constexpr float ZERO_DEADBAND_N = 0.15f;
+// OLED refresh
+constexpr unsigned long DISPLAY_INTERVAL_MS = 100;
 
-// =====================================================
-// General timing
-// =====================================================
-
-unsigned long lastSerialPrintMs = 0;
-
-constexpr unsigned long SERIAL_PRINT_INTERVAL_MS = 100;
-
-unsigned long lastDisplayUpdateMs = 0;
-
-constexpr unsigned long DISPLAY_UPDATE_INTERVAL_MS = 100;
+// Update commanded motor frequency every 20 ms
+constexpr unsigned long RAMP_UPDATE_INTERVAL_MS = 20;
 
 // =====================================================
-// Machine state
+// ESP32 LEDC hardware STEP generator
 // =====================================================
 
-enum MachineState
+constexpr int STEP_CHANNEL = 0;
+constexpr int STEP_RESOLUTION_BITS = 8;
+
+// =====================================================
+// Motion state
+// =====================================================
+
+enum MotionPhase
 {
-  MENU,
-  TEST_RUNNING,
-  BREAK_DETECTED
+    WAITING,
+    ACCELERATING,
+    CRUISING,
+    DECELERATING,
+    PAUSED,
+    COMPLETE
 };
 
-MachineState machineState = MENU;
+MotionPhase motionPhase = WAITING;
+
+bool currentDirection = HIGH;
+
+int currentStepHz = 0;
+
+unsigned long phaseStartMs = 0;
+unsigned long lastDisplayMs = 0;
+unsigned long lastRampUpdateMs = 0;
 
 // =====================================================
-// Test display mode
+// Phase text
 // =====================================================
 
-enum TestDisplayMode
+const char *phaseName(MotionPhase phase)
 {
-  GAUGE_VIEW,
-  GRAPH_VIEW
-};
-
-TestDisplayMode testDisplayMode = GAUGE_VIEW;
-
-// =====================================================
-// Force data
-// =====================================================
-
-long zeroOffset = 0;
-
-float forceN = 0.0f;
-float peakForceN = 0.0f;
-float breakForceN = 0.0f;
-
-// =====================================================
-// Graph history
-// =====================================================
-
-// 120 samples x 100 ms = about 12 seconds on screen.
-constexpr int GRAPH_HISTORY_SIZE = 120;
-
-float forceHistory[GRAPH_HISTORY_SIZE];
-
-// =====================================================
-// Graph smoothing
-// =====================================================
-
-// 5 samples x 100 ms = about 0.5 sec moving average.
-constexpr int GRAPH_SMOOTHING_SAMPLES = 5;
-
-float smoothingBuffer[GRAPH_SMOOTHING_SAMPLES] = {0};
-
-int smoothingIndex = 0;
-int smoothingCount = 0;
-
-// =====================================================
-// Button debounce
-// =====================================================
-
-bool previousRawButton = HIGH;
-bool stableButtonState = HIGH;
-
-unsigned long lastButtonChangeMs = 0;
-
-constexpr unsigned long DEBOUNCE_MS = 40;
-
-// =====================================================
-// Status LED
-// =====================================================
-
-void statusLedOn()
-{
-  digitalWrite(STATUS_LED_PIN, HIGH);
-}
-
-void statusLedOff()
-{
-  digitalWrite(STATUS_LED_PIN, LOW);
-}
-
-void statusLedBlink(int times, int delayMs)
-{
-  for (int i = 0; i < times; i++)
-  {
-    statusLedOn();
-    delay(delayMs);
-
-    statusLedOff();
-    delay(delayMs);
-  }
-}
-
-void resetStatusPulse()
-{
-  statusBrightness = 5;
-  statusFadeAmount = 2;
-
-  lastStatusFadeMs = millis();
-
-  analogWrite(
-      STATUS_LED_PIN,
-      statusBrightness);
-}
-
-void updateStatusPulse()
-{
-  if (millis() - lastStatusFadeMs <
-      STATUS_FADE_INTERVAL_MS)
-  {
-    return;
-  }
-
-  lastStatusFadeMs = millis();
-
-  statusBrightness += statusFadeAmount;
-
-  if (statusBrightness >= 100)
-  {
-    statusBrightness = 100;
-    statusFadeAmount = -2;
-  }
-  else if (statusBrightness <= 5)
-  {
-    statusBrightness = 5;
-    statusFadeAmount = 2;
-  }
-
-  analogWrite(
-      STATUS_LED_PIN,
-      statusBrightness);
-}
-
-// =====================================================
-// Button handling
-// =====================================================
-
-bool selectPressed()
-{
-  const bool rawButton =
-      digitalRead(SELECT_BUTTON_PIN);
-
-  if (rawButton != previousRawButton)
-  {
-    previousRawButton = rawButton;
-    lastButtonChangeMs = millis();
-  }
-
-  if (millis() - lastButtonChangeMs >=
-      DEBOUNCE_MS)
-  {
-    if (rawButton != stableButtonState)
+    switch (phase)
     {
-      stableButtonState = rawButton;
+    case WAITING:
+        return "WAITING";
 
-      if (stableButtonState == LOW)
-      {
-        return true;
-      }
+    case ACCELERATING:
+        return "ACCELERATING";
+
+    case CRUISING:
+        return "FULL SPEED";
+
+    case DECELERATING:
+        return "DECELERATING";
+
+    case PAUSED:
+        return "PAUSED";
+
+    case COMPLETE:
+        return "COMPLETE";
     }
-  }
 
-  return false;
+    return "";
 }
 
 // =====================================================
-// Graph history
+// Hardware STEP control
 // =====================================================
 
-void clearForceHistory()
+void startStepGenerator(int frequencyHz)
 {
-  for (int i = 0;
-       i < GRAPH_HISTORY_SIZE;
-       i++)
-  {
-    forceHistory[i] = 0.0f;
-  }
-}
-
-void addForceHistory(float value)
-{
-  // Shift everything left one pixel/sample.
-  for (int i = 0;
-       i < GRAPH_HISTORY_SIZE - 1;
-       i++)
-  {
-    forceHistory[i] =
-        forceHistory[i + 1];
-  }
-
-  // Newest sample enters from the right.
-  forceHistory[GRAPH_HISTORY_SIZE - 1] =
-      value;
-}
-
-// =====================================================
-// Graph smoothing
-// =====================================================
-
-float smoothGraphForce(float newValue)
-{
-  smoothingBuffer[smoothingIndex] =
-      newValue;
-
-  smoothingIndex =
-      (smoothingIndex + 1) %
-      GRAPH_SMOOTHING_SAMPLES;
-
-  if (smoothingCount <
-      GRAPH_SMOOTHING_SAMPLES)
-  {
-    smoothingCount++;
-  }
-
-  float total = 0.0f;
-
-  for (int i = 0;
-       i < smoothingCount;
-       i++)
-  {
-    total += smoothingBuffer[i];
-  }
-
-  return total / smoothingCount;
-}
-
-void resetGraphSmoothing()
-{
-  for (int i = 0;
-       i < GRAPH_SMOOTHING_SAMPLES;
-       i++)
-  {
-    smoothingBuffer[i] = 0.0f;
-  }
-
-  smoothingIndex = 0;
-  smoothingCount = 0;
-}
-
-// =====================================================
-// Dancing dog
-// =====================================================
-
-void drawDog(int x, int y, bool frame)
-{
-  // ===================================================
-  // Side-profile dog
-  // ===================================================
-
-  // Body
-  display.fillRect(
-      x + 5,
-      y + 9,
-      13,
-      7,
-      SSD1306_WHITE);
-
-  // Chest / neck
-  display.fillRect(
-      x + 16,
-      y + 6,
-      4,
-      8,
-      SSD1306_WHITE);
-
-  // Head
-  display.fillRect(
-      x + 18,
-      y + 3,
-      7,
-      7,
-      SSD1306_WHITE);
-
-  // Muzzle
-  display.fillRect(
-      x + 24,
-      y + 6,
-      4,
-      3,
-      SSD1306_WHITE);
-
-  // Nose
-  display.drawPixel(
-      x + 28,
-      y + 7,
-      SSD1306_WHITE);
-
-  // Eye
-  display.drawPixel(
-      x + 22,
-      y + 5,
-      SSD1306_BLACK);
-
-  // Floppy ear
-  display.fillRect(
-      x + 18,
-      y + 1,
-      3,
-      5,
-      SSD1306_WHITE);
-
-  // Belly cutout
-  display.drawFastHLine(
-      x + 8,
-      y + 15,
-      7,
-      SSD1306_BLACK);
-
-  // ===================================================
-  // Dancing legs
-  // ===================================================
-
-  if (frame)
-  {
-    // Front leg forward
-    display.drawLine(
-        x + 17,
-        y + 15,
-        x + 20,
-        y + 21,
-        SSD1306_WHITE);
-
-    display.drawFastHLine(
-        x + 20,
-        y + 21,
-        3,
-        SSD1306_WHITE);
-
-    // Rear leg backward
-    display.drawLine(
-        x + 8,
-        y + 15,
-        x + 4,
-        y + 20,
-        SSD1306_WHITE);
-
-    display.drawFastHLine(
-        x + 2,
-        y + 20,
-        3,
-        SSD1306_WHITE);
-  }
-  else
-  {
-    // Front leg backward
-    display.drawLine(
-        x + 17,
-        y + 15,
-        x + 14,
-        y + 21,
-        SSD1306_WHITE);
-
-    display.drawFastHLine(
-        x + 12,
-        y + 21,
-        3,
-        SSD1306_WHITE);
-
-    // Rear leg forward
-    display.drawLine(
-        x + 8,
-        y + 15,
-        x + 11,
-        y + 21,
-        SSD1306_WHITE);
-
-    display.drawFastHLine(
-        x + 11,
-        y + 21,
-        3,
-        SSD1306_WHITE);
-  }
-
-  // ===================================================
-  // Wagging tail
-  // ===================================================
-
-  if (frame)
-  {
-    display.drawLine(
-        x + 5,
-        y + 10,
-        x + 1,
-        y + 6,
-        SSD1306_WHITE);
-
-    display.drawLine(
-        x + 1,
-        y + 6,
-        x,
-        y + 3,
-        SSD1306_WHITE);
-  }
-  else
-  {
-    display.drawLine(
-        x + 5,
-        y + 10,
-        x + 1,
-        y + 11,
-        SSD1306_WHITE);
-
-    display.drawLine(
-        x + 1,
-        y + 11,
-        x,
-        y + 14,
-        SSD1306_WHITE);
-  }
-}
-
-// =====================================================
-// Menu screen
-// =====================================================
-
-void drawMenuScreen()
-{
-  display.clearDisplay();
-
-  display.setTextColor(
-      SSD1306_WHITE);
-
-  display.setTextSize(1);
-
-  display.setCursor(0, 1);
-  display.print("MACK-10");
-
-  display.drawFastHLine(
-      0,
-      11,
-      SCREEN_WIDTH,
-      SSD1306_WHITE);
-
-  display.setCursor(4, 19);
-  display.print("> START TEST");
-
-  display.setCursor(4, 33);
-  display.print("Press SELECT");
-
-  // Countdown
-  unsigned long elapsed =
-      millis() - menuStartMs;
-
-  int remainingSeconds =
-      5 -
-      static_cast<int>(
-          elapsed / 1000);
-
-  if (remainingSeconds < 0)
-  {
-    remainingSeconds = 0;
-  }
-
-  display.setCursor(4, 48);
-
-  display.print("Auto in ");
-  display.print(remainingSeconds);
-  display.print("s");
-
-  // Animated dog
-  drawDog(
-      97,
-      18,
-      dogFrame);
-
-  display.display();
-}
-
-void updateMenuAnimation()
-{
-  if (millis() - lastDogFrameMs >=
-      DOG_FRAME_INTERVAL_MS)
-  {
-    lastDogFrameMs = millis();
-
-    dogFrame = !dogFrame;
-
-    drawMenuScreen();
-  }
-}
-
-// =====================================================
-// Gauge view
-// =====================================================
-
-void drawLoadBar(float currentForce)
-{
-  constexpr int BAR_X = 4;
-  constexpr int BAR_Y = 43;
-
-  constexpr int BAR_WIDTH = 120;
-  constexpr int BAR_HEIGHT = 14;
-
-  display.drawRect(
-      BAR_X,
-      BAR_Y,
-      BAR_WIDTH,
-      BAR_HEIGHT,
-      SSD1306_WHITE);
-
-  // Use magnitude for bar length.
-  float fraction =
-      fabs(currentForce) /
-      BREAK_THRESHOLD_N;
-
-  fraction =
-      constrain(
-          fraction,
-          0.0f,
-          1.0f);
-
-  const int fillWidth =
-      static_cast<int>(
-          fraction *
-          (BAR_WIDTH - 4));
-
-  if (fillWidth > 0)
-  {
-    display.fillRect(
-        BAR_X + 2,
-        BAR_Y + 2,
-        fillWidth,
-        BAR_HEIGHT - 4,
-        SSD1306_WHITE);
-  }
-}
-
-void drawGaugeView()
-{
-  display.clearDisplay();
-
-  display.setTextColor(
-      SSD1306_WHITE);
-
-  display.setTextSize(1);
-
-  display.setCursor(0, 0);
-  display.print("TEST RUNNING");
-
-  display.setCursor(88, 0);
-  display.print("+/-50N");
-
-  display.setTextSize(2);
-
-  display.setCursor(0, 13);
-
-  display.print(
-      forceN,
-      1);
-
-  display.print(" N");
-
-  display.setTextSize(1);
-
-  display.setCursor(80, 20);
-  display.print("Peak");
-
-  display.setCursor(80, 30);
-
-  display.print(
-      peakForceN,
-      1);
-
-  display.print("N");
-
-  drawLoadBar(forceN);
-
-  display.display();
-}
-
-// =====================================================
-// Graph view
-// =====================================================
-
-void drawGraphView()
-{
-  display.clearDisplay();
-
-  display.setTextColor(
-      SSD1306_WHITE);
-
-  display.setTextSize(1);
-
-  // ===================================================
-  // Header
-  // ===================================================
-
-  display.setCursor(0, 0);
-  display.print("LOAD");
-
-  display.setCursor(31, 0);
-
-  display.print(
-      forceN,
-      1);
-
-  display.print("N");
-
-  display.setCursor(82, 0);
-
-  display.print("P:");
-
-  display.print(
-      peakForceN,
-      1);
-
-  // ===================================================
-  // Graph geometry
-  // ===================================================
-
-  constexpr int GRAPH_X = 7;
-  constexpr int GRAPH_Y = 13;
-
-  constexpr int GRAPH_WIDTH = 120;
-  constexpr int GRAPH_HEIGHT = 48;
-
-  constexpr int GRAPH_TOP =
-      GRAPH_Y;
-
-  constexpr int GRAPH_BOTTOM =
-      GRAPH_Y +
-      GRAPH_HEIGHT -
-      1;
-
-  // Zero is always centered.
-  constexpr int ZERO_Y =
-      GRAPH_Y +
-      GRAPH_HEIGHT / 2;
-
-  constexpr int HALF_GRAPH_HEIGHT =
-      (GRAPH_HEIGHT / 2) - 2;
-
-  // Y axis.
-  display.drawFastVLine(
-      GRAPH_X,
-      GRAPH_Y,
-      GRAPH_HEIGHT,
-      SSD1306_WHITE);
-
-  // Dotted zero line.
-  for (int x = GRAPH_X;
-       x < SCREEN_WIDTH;
-       x += 4)
-  {
-    display.drawFastHLine(
-        x,
-        ZERO_Y,
-        2,
-        SSD1306_WHITE);
-  }
-
-  // Small zero marker.
-  display.setCursor(0, ZERO_Y - 3);
-  display.print("0");
-
-  // ===================================================
-  // Symmetric auto scaling
-  // ===================================================
-
-  // Minimum +/-5 N range keeps small noise reasonable.
-  float graphMagnitude = 5.0f;
-
-  for (int i = 0;
-       i < GRAPH_HISTORY_SIZE;
-       i++)
-  {
-    const float magnitude =
-        fabs(forceHistory[i]);
-
-    if (magnitude >
-        graphMagnitude)
+    if (frequencyHz < 1)
     {
-      graphMagnitude =
-          magnitude;
+        frequencyHz = 1;
     }
-  }
 
-  // Add 20% headroom in both directions.
-  graphMagnitude *= 1.20f;
+    currentStepHz = frequencyHz;
 
-  // ===================================================
-  // Draw scrolling trace
-  // ===================================================
+    // Hardware-generated square wave.
+    ledcWriteTone(
+        STEP_CHANNEL,
+        frequencyHz);
+}
 
-  for (int i = 1;
-       i < GRAPH_HISTORY_SIZE;
-       i++)
-  {
-    const float previousForce =
-        forceHistory[i - 1];
+void changeStepFrequency(int frequencyHz)
+{
+    if (frequencyHz < 1)
+    {
+        frequencyHz = 1;
+    }
 
-    const float currentForce =
-        forceHistory[i];
+    currentStepHz = frequencyHz;
 
-    // Positive goes upward.
-    // Negative goes downward.
-    int y1 =
-        ZERO_Y -
-        static_cast<int>(
-            (previousForce /
-             graphMagnitude) *
-            HALF_GRAPH_HEIGHT);
+    ledcWriteTone(
+        STEP_CHANNEL,
+        frequencyHz);
+}
 
-    int y2 =
-        ZERO_Y -
-        static_cast<int>(
-            (currentForce /
-             graphMagnitude) *
-            HALF_GRAPH_HEIGHT);
+void stopStepGenerator()
+{
+    currentStepHz = 0;
 
-    y1 =
+    ledcWriteTone(
+        STEP_CHANNEL,
+        0);
+
+    ledcWrite(
+        STEP_CHANNEL,
+        0);
+}
+
+// =====================================================
+// Progress bar
+// =====================================================
+
+void drawProgressBar(float progress)
+{
+    constexpr int BAR_X = 4;
+    constexpr int BAR_Y = 50;
+    constexpr int BAR_W = 120;
+    constexpr int BAR_H = 10;
+
+    progress =
         constrain(
-            y1,
-            GRAPH_TOP,
-            GRAPH_BOTTOM);
+            progress,
+            0.0f,
+            1.0f);
 
-    y2 =
-        constrain(
-            y2,
-            GRAPH_TOP,
-            GRAPH_BOTTOM);
-
-    const int x1 =
-        GRAPH_X +
-        i -
-        1;
-
-    const int x2 =
-        GRAPH_X +
-        i;
-
-    // Primary line
-    display.drawLine(
-        x1,
-        y1,
-        x2,
-        y2,
+    display.drawRect(
+        BAR_X,
+        BAR_Y,
+        BAR_W,
+        BAR_H,
         SSD1306_WHITE);
 
-    // Thicker second pixel.
-    if (y1 < ZERO_Y &&
-        y2 < ZERO_Y)
+    const int fillWidth =
+        static_cast<int>(
+            progress *
+            (BAR_W - 4));
+
+    if (fillWidth > 0)
     {
-      if (y1 - 1 >= GRAPH_TOP &&
-          y2 - 1 >= GRAPH_TOP)
-      {
-        display.drawLine(
-            x1,
-            y1 - 1,
-            x2,
-            y2 - 1,
+        display.fillRect(
+            BAR_X + 2,
+            BAR_Y + 2,
+            fillWidth,
+            BAR_H - 4,
             SSD1306_WHITE);
-      }
     }
-    else if (y1 > ZERO_Y &&
-             y2 > ZERO_Y)
+}
+
+// =====================================================
+// Motor status screen
+// =====================================================
+
+void drawMotorScreen()
+{
+    display.clearDisplay();
+
+    display.setTextColor(
+        SSD1306_WHITE);
+
+    display.setTextSize(1);
+
+    // Header
+    display.setCursor(0, 0);
+    display.print("MACK-10 MOTOR TEST");
+
+    display.drawFastHLine(
+        0,
+        10,
+        SCREEN_WIDTH,
+        SSD1306_WHITE);
+
+    // Direction
+    display.setCursor(0, 15);
+    display.print("DIR: ");
+
+    if (currentDirection == HIGH)
     {
-      if (y1 + 1 <= GRAPH_BOTTOM &&
-          y2 + 1 <= GRAPH_BOTTOM)
-      {
-        display.drawLine(
-            x1,
-            y1 + 1,
-            x2,
-            y2 + 1,
-            SSD1306_WHITE);
-      }
+        display.print("FORWARD");
     }
     else
     {
-      if (y1 + 1 <= GRAPH_BOTTOM &&
-          y2 + 1 <= GRAPH_BOTTOM)
-      {
-        display.drawLine(
-            x1,
-            y1 + 1,
-            x2,
-            y2 + 1,
-            SSD1306_WHITE);
-      }
+        display.print("REVERSE");
     }
-  }
 
-  // Newest-sample cursor.
-  display.drawFastVLine(
-      126,
-      ZERO_Y - 2,
-      5,
-      SSD1306_WHITE);
+    // Phase
+    display.setCursor(0, 26);
+    display.print(
+        phaseName(motionPhase));
 
-  display.display();
+    // Step rate
+    display.setCursor(0, 37);
+
+    display.print(
+        currentStepHz);
+
+    display.print(" steps/s");
+
+    // -----------------------------------------------
+    // Progress through current phase
+    // -----------------------------------------------
+
+    float progress = 0.0f;
+
+    const unsigned long elapsed =
+        millis() - phaseStartMs;
+
+    switch (motionPhase)
+    {
+    case ACCELERATING:
+        progress =
+            static_cast<float>(elapsed) /
+            ACCEL_TIME_MS;
+        break;
+
+    case CRUISING:
+        progress =
+            static_cast<float>(elapsed) /
+            CRUISE_TIME_MS;
+        break;
+
+    case DECELERATING:
+        progress =
+            static_cast<float>(elapsed) /
+            DECEL_TIME_MS;
+        break;
+
+    case PAUSED:
+        progress =
+            static_cast<float>(elapsed) /
+            DIRECTION_PAUSE_MS;
+        break;
+
+    case COMPLETE:
+        progress = 1.0f;
+        break;
+
+    default:
+        progress = 0.0f;
+        break;
+    }
+
+    drawProgressBar(progress);
+
+    display.display();
 }
 
 // =====================================================
-// Test view dispatcher
+// Startup display
 // =====================================================
 
-void drawCurrentTestView()
+void drawStartupScreen(int seconds)
 {
-  if (testDisplayMode ==
-      GAUGE_VIEW)
-  {
-    drawGaugeView();
-  }
-  else
-  {
-    drawGraphView();
-  }
+    display.clearDisplay();
+
+    display.setTextColor(
+        SSD1306_WHITE);
+
+    display.setTextSize(1);
+
+    display.setCursor(40, 8);
+    display.println("MACK-10");
+
+    display.setCursor(12, 25);
+    display.println("SMOOTH MOTOR TEST");
+
+    display.setTextSize(2);
+
+    display.setCursor(58, 43);
+    display.print(seconds);
+
+    display.display();
 }
 
 // =====================================================
-// Break screen
+// Motion phases
 // =====================================================
 
-void drawBreakScreen()
+void beginAcceleration()
 {
-  display.clearDisplay();
+    motionPhase =
+        ACCELERATING;
 
-  display.setTextColor(
-      SSD1306_WHITE);
+    phaseStartMs =
+        millis();
 
-  display.setTextSize(1);
+    lastRampUpdateMs =
+        millis();
 
-  display.setCursor(20, 0);
-  display.println("BREAK DETECTED");
+    startStepGenerator(
+        START_STEP_HZ);
 
-  display.drawFastHLine(
-      0,
-      10,
-      SCREEN_WIDTH,
-      SSD1306_WHITE);
+    Serial.println(
+        "Accelerating...");
+}
 
-  display.setTextSize(2);
+void beginCruise()
+{
+    motionPhase =
+        CRUISING;
 
-  display.setCursor(10, 17);
+    phaseStartMs =
+        millis();
 
-  display.print(
-      breakForceN,
-      1);
+    changeStepFrequency(
+        MAX_STEP_HZ);
 
-  display.println(" N");
+    Serial.println(
+        "Full speed.");
+}
 
-  display.setTextSize(1);
+void beginDeceleration()
+{
+    motionPhase =
+        DECELERATING;
 
-  display.setCursor(19, 40);
-  display.println("Peak force");
+    phaseStartMs =
+        millis();
 
-  display.setCursor(2, 54);
-  display.println("SELECT or auto 5s");
+    lastRampUpdateMs =
+        millis();
 
-  display.display();
+    Serial.println(
+        "Decelerating...");
+}
+
+void beginPause()
+{
+    stopStepGenerator();
+
+    motionPhase =
+        PAUSED;
+
+    phaseStartMs =
+        millis();
+
+    Serial.println(
+        "Paused.");
 }
 
 // =====================================================
-// Taring screen
+// Motion update
 // =====================================================
 
-void drawTaringScreen()
+void updateMotion()
 {
-  display.clearDisplay();
+    const unsigned long now =
+        millis();
 
-  display.setTextColor(
-      SSD1306_WHITE);
+    const unsigned long elapsed =
+        now - phaseStartMs;
 
-  display.setTextSize(1);
+    // ===================================================
+    // Acceleration
+    // ===================================================
 
-  display.setCursor(20, 20);
-  display.println("REMOVE ALL LOAD");
+    if (motionPhase ==
+        ACCELERATING)
+    {
+        if (elapsed >=
+            ACCEL_TIME_MS)
+        {
+            beginCruise();
+            return;
+        }
 
-  display.setCursor(43, 38);
-  display.println("TARING");
+        if (now -
+                lastRampUpdateMs >=
+            RAMP_UPDATE_INTERVAL_MS)
+        {
+            lastRampUpdateMs =
+                now;
 
-  display.display();
+            const float progress =
+                static_cast<float>(elapsed) /
+                ACCEL_TIME_MS;
+
+            const int frequency =
+                START_STEP_HZ +
+                static_cast<int>(
+                    progress *
+                    (MAX_STEP_HZ -
+                     START_STEP_HZ));
+
+            changeStepFrequency(
+                frequency);
+        }
+
+        return;
+    }
+
+    // ===================================================
+    // Cruise
+    // ===================================================
+
+    if (motionPhase ==
+        CRUISING)
+    {
+        if (elapsed >=
+            CRUISE_TIME_MS)
+        {
+            beginDeceleration();
+        }
+
+        return;
+    }
+
+    // ===================================================
+    // Deceleration
+    // ===================================================
+
+    if (motionPhase ==
+        DECELERATING)
+    {
+        if (elapsed >=
+            DECEL_TIME_MS)
+        {
+            beginPause();
+            return;
+        }
+
+        if (now -
+                lastRampUpdateMs >=
+            RAMP_UPDATE_INTERVAL_MS)
+        {
+            lastRampUpdateMs =
+                now;
+
+            const float progress =
+                static_cast<float>(elapsed) /
+                DECEL_TIME_MS;
+
+            const int frequency =
+                MAX_STEP_HZ -
+                static_cast<int>(
+                    progress *
+                    (MAX_STEP_HZ -
+                     START_STEP_HZ));
+
+            changeStepFrequency(
+                frequency);
+        }
+
+        return;
+    }
 }
 
 // =====================================================
-// Menu control
+// Run one direction
 // =====================================================
 
-void enterMenu()
+void runDirection(bool direction)
 {
-  machineState = MENU;
+    currentDirection =
+        direction;
 
-  menuStartMs = millis();
+    // Stop STEP first before changing direction.
+    stopStepGenerator();
 
-  lastDogFrameMs = millis();
+    digitalWrite(
+        DIR_PIN,
+        direction);
 
-  dogFrame = false;
+    // Generous DIR setup time.
+    delay(20);
 
-  statusLedOff();
+    beginAcceleration();
 
-  drawMenuScreen();
+    while (motionPhase != PAUSED)
+    {
+        updateMotion();
 
-  Serial.println();
-  Serial.println("START TEST screen.");
-  Serial.println(
-      "Press SELECT or wait 5 seconds.");
-}
+        // OLED is completely independent
+        // of the STEP waveform now.
+        if (millis() -
+                lastDisplayMs >=
+            DISPLAY_INTERVAL_MS)
+        {
+            lastDisplayMs =
+                millis();
 
-// =====================================================
-// Start test
-// =====================================================
+            drawMotorScreen();
+        }
 
-void startNewTest()
-{
-  Serial.println();
-  Serial.println("Starting new test...");
-  Serial.println("Taring load cell...");
+        // Give background ESP32 tasks time.
+        delay(1);
+    }
 
-  machineState =
-      TEST_RUNNING;
+    drawMotorScreen();
 
-  testDisplayMode =
-      GAUGE_VIEW;
-
-  clearForceHistory();
-  resetGraphSmoothing();
-
-  statusLedOff();
-
-  drawTaringScreen();
-
-  statusLedBlink(
-      2,
-      150);
-
-  delay(300);
-
-  zeroOffset =
-      scale.read_average(20);
-
-  forceN = 0.0f;
-  peakForceN = 0.0f;
-  breakForceN = 0.0f;
-
-  resetStatusPulse();
-
-  lastDisplayUpdateMs =
-      millis();
-
-  lastSerialPrintMs =
-      millis();
-
-  drawCurrentTestView();
-
-  Serial.println("Test ready.");
-}
-
-// =====================================================
-// Break detection
-// =====================================================
-
-void triggerBreak()
-{
-  breakForceN =
-      peakForceN;
-
-  machineState =
-      BREAK_DETECTED;
-
-  breakDetectedMs =
-      millis();
-
-  statusLedOff();
-
-  Serial.println();
-
-  Serial.print(
-      "Break detected at ");
-
-  Serial.print(
-      breakForceN,
-      2);
-
-  Serial.println(" N");
-
-  Serial.println(
-      "Press SELECT to restart immediately.");
-
-  drawBreakScreen();
+    delay(
+        DIRECTION_PAUSE_MS);
 }
 
 // =====================================================
@@ -1081,338 +551,168 @@ void triggerBreak()
 
 void setup()
 {
-  Serial.begin(115200);
+    Serial.begin(115200);
 
-  delay(300);
+    delay(300);
 
-  // ---------------------------------------------------
-  // Status LED
-  // ---------------------------------------------------
+    Serial.println();
+    Serial.println("==============================");
+    Serial.println(" MACK-10 SMOOTH MOTOR TEST");
+    Serial.println("==============================");
 
-  pinMode(
-      STATUS_LED_PIN,
-      OUTPUT);
+    // ===================================================
+    // GPIO
+    // ===================================================
 
-  statusLedOff();
+    pinMode(
+        ENABLE_PIN,
+        OUTPUT);
 
-  statusLedBlink(
-      3,
-      150);
+    pinMode(
+        DIR_PIN,
+        OUTPUT);
 
-  Serial.println(
-      "MACK-10 starting...");
+    pinMode(
+        STEP_PIN,
+        OUTPUT);
 
-  // ---------------------------------------------------
-  // SELECT button
-  // ---------------------------------------------------
+    // Safe startup states.
+    digitalWrite(
+        ENABLE_PIN,
+        HIGH);
 
-  pinMode(
-      SELECT_BUTTON_PIN,
-      INPUT_PULLUP);
+    digitalWrite(
+        DIR_PIN,
+        LOW);
 
-  previousRawButton =
-      digitalRead(
-          SELECT_BUTTON_PIN);
+    digitalWrite(
+        STEP_PIN,
+        LOW);
 
-  stableButtonState =
-      previousRawButton;
+    // ===================================================
+    // Hardware PWM / STEP generator
+    // Arduino-ESP32 2.x API
+    // ===================================================
 
-  lastButtonChangeMs =
-      millis();
+    ledcSetup(
+        STEP_CHANNEL,
+        START_STEP_HZ,
+        STEP_RESOLUTION_BITS);
 
-  // ---------------------------------------------------
-  // OLED
-  // ---------------------------------------------------
+    ledcAttachPin(
+        STEP_PIN,
+        STEP_CHANNEL);
 
-  Wire.begin(
-      OLED_SDA_PIN,
-      OLED_SCL_PIN);
+    stopStepGenerator();
 
-  Wire.setClock(
-      100000);
+    // ===================================================
+    // OLED
+    // ===================================================
 
-  if (!display.begin(
-          SSD1306_SWITCHCAPVCC,
-          OLED_ADDRESS))
-  {
-    Serial.println(
-        "OLED initialization failed.");
+    Wire.begin(
+        OLED_SDA_PIN,
+        OLED_SCL_PIN);
 
-    while (true)
+    // SSD1306 generally supports 400 kHz I2C.
+    Wire.setClock(
+        400000);
+
+    if (!display.begin(
+            SSD1306_SWITCHCAPVCC,
+            OLED_ADDRESS))
     {
-      statusLedOn();
-      delay(300);
+        Serial.println(
+            "OLED initialization failed.");
 
-      statusLedOff();
-      delay(300);
+        while (true)
+        {
+            delay(1000);
+        }
     }
-  }
 
-  display.ssd1306_command(
-      SSD1306_SETCONTRAST);
+    display.ssd1306_command(
+        SSD1306_SETCONTRAST);
 
-  display.ssd1306_command(
-      0xFF);
+    display.ssd1306_command(
+        0xFF);
 
-  // ---------------------------------------------------
-  // Startup splash
-  // ---------------------------------------------------
+    // ===================================================
+    // Startup countdown
+    // ===================================================
 
-  display.clearDisplay();
+    for (int seconds = 3;
+         seconds > 0;
+         seconds--)
+    {
+        drawStartupScreen(
+            seconds);
 
-  display.setTextColor(
-      SSD1306_WHITE);
+        delay(1000);
+    }
 
-  display.setTextSize(1);
+    // ===================================================
+    // Enable TMC2208
+    // ===================================================
 
-  display.setCursor(
-      16,
-      20);
+    digitalWrite(
+        ENABLE_PIN,
+        LOW);
 
-  display.println(
-      "TENSILE TESTER");
-
-  display.setCursor(
-      34,
-      38);
-
-  display.println(
-      "STARTING");
-
-  display.display();
-
-  // ---------------------------------------------------
-  // HX711
-  // ---------------------------------------------------
-
-  scale.begin(
-      HX711_DT_PIN,
-      HX711_SCK_PIN);
-
-  while (!scale.wait_ready_timeout(
-      1000))
-  {
     Serial.println(
-        "Waiting for HX711...");
+        "TMC2208 enabled.");
 
-    statusLedOn();
-    delay(100);
+    delay(500);
 
-    statusLedOff();
-    delay(100);
-  }
+    // ===================================================
+    // Forward
+    // ===================================================
 
-  Serial.println(
-      "HX711 detected.");
+    Serial.println();
+    Serial.println(
+        "FORWARD");
 
-  enterMenu();
+    runDirection(
+        HIGH);
+
+    // ===================================================
+    // Reverse
+    // ===================================================
+
+    Serial.println();
+    Serial.println(
+        "REVERSE");
+
+    runDirection(
+        LOW);
+
+    // ===================================================
+    // Complete
+    // ===================================================
+
+    stopStepGenerator();
+
+    digitalWrite(
+        ENABLE_PIN,
+        HIGH);
+
+    motionPhase =
+        COMPLETE;
+
+    phaseStartMs =
+        millis();
+
+    drawMotorScreen();
+
+    Serial.println();
+    Serial.println(
+        "TEST COMPLETE");
 }
 
 // =====================================================
-// Main loop
+// Loop
 // =====================================================
 
 void loop()
 {
-  // ===================================================
-  // SELECT input
-  // ===================================================
-
-  if (selectPressed())
-  {
-    Serial.println(
-        "SELECT pressed.");
-
-    // Menu -> start immediately.
-    if (machineState == MENU)
-    {
-      startNewTest();
-      return;
-    }
-
-    // Running -> toggle gauge / graph.
-    if (machineState ==
-        TEST_RUNNING)
-    {
-      if (testDisplayMode ==
-          GAUGE_VIEW)
-      {
-        testDisplayMode =
-            GRAPH_VIEW;
-
-        Serial.println(
-            "Display: GRAPH");
-      }
-      else
-      {
-        testDisplayMode =
-            GAUGE_VIEW;
-
-        Serial.println(
-            "Display: GAUGE");
-      }
-
-      drawCurrentTestView();
-
-      return;
-    }
-
-    // Break -> restart immediately.
-    if (machineState ==
-        BREAK_DETECTED)
-    {
-      Serial.println(
-          "Manual restart.");
-
-      startNewTest();
-
-      return;
-    }
-  }
-
-  // ===================================================
-  // Menu
-  // ===================================================
-
-  if (machineState == MENU)
-  {
-    statusLedOff();
-
-    updateMenuAnimation();
-
-    if (millis() -
-            menuStartMs >=
-        AUTO_START_DELAY_MS)
-    {
-      Serial.println(
-          "Auto-start timeout.");
-
-      startNewTest();
-    }
-
-    return;
-  }
-
-  // ===================================================
-  // Break screen
-  // ===================================================
-
-  if (machineState ==
-      BREAK_DETECTED)
-  {
-    statusLedOff();
-
-    if (millis() -
-            breakDetectedMs >=
-        BREAK_SCREEN_DELAY_MS)
-    {
-      enterMenu();
-    }
-
-    return;
-  }
-
-  // ===================================================
-  // Active test
-  // ===================================================
-
-  updateStatusPulse();
-
-  if (!scale.is_ready())
-  {
-    return;
-  }
-
-  const long rawReading =
-      scale.read();
-
-  const long relativeCounts =
-      rawReading -
-      zeroOffset;
-
-  // Signed force.
-  forceN =
-      static_cast<float>(
-          relativeCounts) /
-      DEMO_COUNTS_PER_NEWTON;
-
-  // ---------------------------------------------------
-  // Deadband
-  // ---------------------------------------------------
-
-  if (fabs(forceN) <
-      ZERO_DEADBAND_N)
-  {
-    forceN = 0.0f;
-  }
-
-  // ---------------------------------------------------
-  // Signed peak
-  // ---------------------------------------------------
-
-  if (fabs(forceN) >
-      fabs(peakForceN))
-  {
-    peakForceN =
-        forceN;
-  }
-
-  // ---------------------------------------------------
-  // Serial
-  // ---------------------------------------------------
-
-  if (millis() -
-          lastSerialPrintMs >=
-      SERIAL_PRINT_INTERVAL_MS)
-  {
-    lastSerialPrintMs =
-        millis();
-
-    Serial.print("Force:");
-
-    Serial.print(
-        forceN,
-        2);
-
-    Serial.print(",Peak:");
-
-    Serial.println(
-        peakForceN,
-        2);
-  }
-
-  // ---------------------------------------------------
-  // Break detection in either direction
-  // ---------------------------------------------------
-
-  if (fabs(forceN) >=
-      BREAK_THRESHOLD_N)
-  {
-    triggerBreak();
-
-    return;
-  }
-
-  // ===================================================
-  // Graph sampling + OLED update
-  // ===================================================
-
-  if (millis() -
-          lastDisplayUpdateMs >=
-      DISPLAY_UPDATE_INTERVAL_MS)
-  {
-    lastDisplayUpdateMs =
-        millis();
-
-    // Smoothing applies only to graph trace.
-    const float smoothedForce =
-        smoothGraphForce(
-            forceN);
-
-    // Always shift graph history.
-    addForceHistory(
-        smoothedForce);
-
-    drawCurrentTestView();
-  }
+    // One-shot test.
 }
