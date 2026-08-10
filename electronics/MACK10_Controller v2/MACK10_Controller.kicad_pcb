@@ -8998,6 +8998,18 @@
 	)
 	(gr_poly
 		(pts
+			(xy 60.525 82.9) (xy 61.225 83.95) (xy 61.93743 82.9) (xy 60.53743 82.9)
+		)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "92842bfc-c0d0-43d1-98dd-e11de767005e")
+	)
+	(gr_poly
+		(pts
 			(xy 60.73757 88.025) (xy 61.43757 89.075) (xy 62.15 88.025) (xy 60.75 88.025)
 		)
 		(stroke
@@ -9043,18 +9055,6 @@
 		(fill yes)
 		(layer "F.SilkS")
 		(uuid "153ddfd1-1cf7-41e8-b754-0aec9efb012c")
-	)
-	(gr_poly
-		(pts
-			(xy 81.225 72.11257) (xy 80.175 72.81257) (xy 81.225 73.525) (xy 81.225 72.125)
-		)
-		(stroke
-			(width 0.2)
-			(type solid)
-		)
-		(fill yes)
-		(layer "F.SilkS")
-		(uuid "92842bfc-c0d0-43d1-98dd-e11de767005e")
 	)
 	(gr_poly
 		(pts
