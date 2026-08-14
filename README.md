@@ -1,6 +1,6 @@
 # MACK-10 Tensile Tester
 
-> An open-source desktop tensile tester for material characterization, designed to make mechanical testing affordable, accessible, and educational.
+> An open-source desktop tensile tester for affordable material characterization and education.
 
 <p align="center">
   <img src="images/hero.png" width="900" alt="MACK-10 Banner">
@@ -13,208 +13,128 @@
 
 ---
 
-# Project Overview
+# Overview
 
-MACK-10 is an open-source desktop tensile testing machine designed to evaluate the mechanical properties of small material specimens including:
+MACK-10 is an open-source desktop tensile tester designed to measure the force and displacement of small material specimens.
 
-- 3D printed plastics
+The project combines an ESP32-based controller, load cell, stepper-driven linear stage, custom PCB, and 3D-printed components to create a low-cost alternative to commercial material testing equipment.
+
+The target capacity is **10 kg (~98 N)**, making MACK-10 suitable for testing:
+
+- 3D-printed plastics
 - Engineering polymers
 - Composites
 - Thin metals
 - Educational material samples
 
-The project combines embedded systems, mechanical design, motion control, and materials engineering into a low-cost testing platform capable of measuring force and displacement while generating professional-quality stress-strain data.
-
-The long-term goal is to create an affordable tensile tester that can be built by hobbyists, makers, students, educators, and small labs for a fraction of the cost of commercial testing equipment.
-
----
-
-# Why MACK-10?
-
-Commercial tensile testers often cost $5,000 – $50,000+, making them inaccessible to many students, hobbyists, makerspaces, and small workshops.
-
-MACK-10 explores how modern maker hardware—including microcontrollers, affordable sensors, 3D printing, custom PCBs, and open-source software—can be combined to build a capable educational testing machine at a fraction of the cost.
-
 ---
 
 # Current Status
 
-🚧 **Prototype Development (Revision 1.0)**
+🚧 **Prototype Development — Revision 1**
 
 <p align="center">
-  <img src="images/Update 1.png" width="900" alt="MACK-10 Banner">
+  <img src="images/Update 1.png" width="900" alt="MACK-10 Prototype">
 </p>
 
 ## Electronics
 
 <p align="center">
-  <img src="images/Render2.png" width="400" alt="MACK-10 Banner">
-  <img src="images/DFM.png" width="400" alt="MACK-10 Banner">
+  <img src="images/Render2.png" width="400" alt="MACK-10 PCB Render">
+  <img src="images/DFM.png" width="400" alt="MACK-10 PCB">
 </p>
 
-<p align="center">
-
-</p>
-
-### Controller Hardware
-
-- [x] Custom KiCad PCB
-- [x] ESP32 Controller
-- [x] HX711 Load Cell Interface
-- [x] TMC2208 Stepper Driver
-- [x] LM2596 Power Module
-- [x] OLED Display
-- [x] E-Stop Circuit
-- [x] Dual Limit Switch Inputs
-- [x] Modular JST Wiring
-
-### Firmware
-
-- [x] PlatformIO Project
-- [x] OLED User Interface
-- [x] Automatic Taring
-- [x] Peak Force Tracking
-- [x] Break Detection Simulation
-- [x] Live Serial Plotting
+- [x] Custom KiCad controller PCB
+- [x] ESP32 controller
+- [x] HX711 load cell interface
+- [x] TMC2208 stepper driver
+- [x] LM2596 power regulation
+- [x] OLED interface
+- [x] E-stop input
+- [x] Dual limit switch inputs
+- [x] PlatformIO firmware
+- [x] Automatic taring
+- [x] Peak force tracking
+- [x] Break detection
+- [x] Live serial plotting
 
 ## Mechanical
 
-- [ ] Linear Motion Assembly
-- [ ] NEMA 17 Drive System
-- [ ] Lead Screw Integration
-- [ ] Load Cell Mount
-- [ ] Specimen Grips
-- [ ] Structural Frame
-- [ ] Electronics Enclosure
+- [x] 200 mm T6×1 linear motion stage
+- [x] NEMA 11 stepper drive
+- [ ] Structural frame
+- [ ] Load cell mount
+- [ ] Specimen grips
+- [ ] Electronics enclosure
 
-## Software
+## In Development
 
-- [ ] Load Cell Calibration
-- [ ] Closed-loop Motor Control
-- [ ] Crosshead Speed Control
-- [ ] Position Tracking
-- [ ] Force vs. Displacement Logging
-- [ ] Stress-Strain Calculations
-- [ ] CSV Export
-- [ ] SD Card Support
-- [ ] Material Database
-
----
-
-# Planned Features
-
-- Live force measurement
-- Real-time graphing
-- Automatic specimen taring
-- Adjustable crosshead speed
-- Peak force detection
-- Break detection
-- Force vs. displacement plotting
-- Stress-strain generation
-- Material property calculations
-- CSV export
-- Calibration wizard
-- OLED graphical interface
-- Emergency stop
-- Limit switch homing
-- Modular firmware architecture
+- [ ] Load cell calibration
+- [ ] Crosshead speed control
+- [ ] Position tracking
+- [ ] Force-displacement logging
+- [ ] Stress-strain calculations
+- [ ] CSV export
 
 ---
 
 # Target Specifications
 
-| Specification  | Target               |
-| -------------- | -------------------- |
-| Maximum Force  | 10 kg (≈98 N)        |
-| Load Cell      | 10 kg S-Type         |
-| Controller     | ESP32                |
-| Motion         | NEMA 17 + Lead Screw |
-| User Interface | 128×64 OLED          |
-| Power          | 24 VDC               |
-| PCB            | Custom KiCad Design  |
-| Firmware       | PlatformIO           |
+| Specification  | Target                    |
+| -------------- | ------------------------- |
+| Maximum Force  | 10 kg (~98 N)             |
+| Load Cell      | 10 kg S-Type              |
+| Controller     | ESP32                     |
+| Motion         | NEMA 11 + T6×1 Lead Screw |
+| Travel         | 200 mm                    |
+| User Interface | 128×64 OLED               |
+| PCB            | Custom KiCad Design       |
+| Firmware       | PlatformIO                |
 
 ---
 
-# Repository Structure
+# Bill of Materials
 
-```text
-firmware/      ESP32 firmware
-pcb/           KiCad project files
-cad/           Mechanical CAD models
-docs/          Documentation
-images/        Project photos and diagrams
-```
+## Electronics
 
-Additional documentation (assembly guide, wiring diagrams, calibration procedures, manufacturing files, etc.) will be added as development progresses.
+|   Qty | Component                     | Approx. Cost | Line Total |
+| ----: | ----------------------------- | -----------: | ---------: |
+|     1 | ESP32 DevKit V1               |        $8.00 |      $8.00 |
+|     1 | Custom MACK-10 Controller PCB |        $1.08 |      $1.08 |
+|     1 | HX711 Load Cell Amplifier     |        $3.00 |      $3.00 |
+|     1 | TMC2208 Stepper Driver        |        $5.00 |      $5.00 |
+|     1 | LM2596 Buck Converter         |        $2.00 |      $2.00 |
+|     1 | 10 kg S-Type Load Cell        |       $25.00 |     $25.00 |
+|     1 | SSD1306 128×64 OLED           |        $5.00 |      $5.00 |
+|     1 | PCB Fuse Holder               |        $1.00 |      $1.00 |
+|     1 | 2–2.5 A Fuse                  |        $0.50 |      $0.50 |
+|     1 | Power Switch                  |        $3.00 |      $3.00 |
+|     1 | Emergency Stop Switch         |       $12.00 |     $12.00 |
+|     2 | Limit Switches                |        $2.00 |      $4.00 |
+| 1 Set | JST-XH Connectors & Crimps    |        $4.00 |      $4.00 |
+| 1 Set | Female Header Sockets         |        $2.00 |      $2.00 |
+|     — | LEDs, Resistors & Capacitors  |       ~$2.00 |     ~$2.00 |
+|     — | Wire, Heat Shrink & Misc.     |       ~$5.00 |     ~$5.00 |
 
----
+**Estimated Electronics Cost: ~$83**
 
-# Bill of Materials (BOM)
+## Mechanical
 
-## Estimated Build Cost
+| Qty | Component                        | Approx. Cost | Line Total |
+| --: | -------------------------------- | -----------: | ---------: |
+|   1 | T6×1 Linear Motion Stage, 200 mm |       $31.99 |     $31.99 |
+|   1 | NEMA 11 Stepper Motor            |     Included |   Included |
+|   1 | T6×1 Lead Screw                  |     Included |   Included |
+|   1 | Linear Guide & Carriage          |     Included |   Included |
+|   1 | Structural Frame Hardware        |      ~$20.00 |    ~$20.00 |
+|   1 | Grip Hardware                    |      ~$20.00 |    ~$20.00 |
+|   1 | M3 Fastener Kit                  |      ~$10.00 |    ~$10.00 |
+|   1 | M3 Heat-Set Inserts              |       ~$5.00 |     ~$5.00 |
+|   — | Filament                         |      ~$20.00 |    ~$20.00 |
 
-| Category            | Estimated Cost |
-| ------------------- | -------------: |
-| Electronics         |         $85–95 |
-| Mechanical Hardware |       $170–195 |
-| 24 V Power Supply   |         $15–35 |
-| **Estimated Total** |   **$270–325** |
+**Estimated Mechanical Cost: ~$107**
 
----
-
-## Electronics BOM
-
-|   Qty | Component                    | Approx. Cost (Each) | Line Total |
-| ----: | ---------------------------- | ------------------: | ---------: |
-|     1 | ESP32 DevKit V1              |                  $8 |         $8 |
-|     1 | Custom Controller PCB        |                $2–6 |       $2–6 |
-|     1 | HX711 Load Cell Amplifier    |                  $3 |         $3 |
-|     1 | TMC2208 Stepper Driver       |                  $5 |         $5 |
-|     1 | LM2596 Buck Converter        |                  $2 |         $2 |
-|     1 | 10 kg S-Type Load Cell       |                 $25 |        $25 |
-|     1 | 0.96" SSD1306 OLED Display   |                  $5 |         $5 |
-|     1 | PCB Fuse Holder              |                  $1 |         $1 |
-|     1 | 2–2.5 A Fuse                 |               $0.50 |      $0.50 |
-|     1 | Power Switch                 |                  $3 |         $3 |
-|     1 | Emergency Stop Switch        |                 $12 |        $12 |
-|     2 | Limit Switches               |                  $2 |         $4 |
-| 1 Set | JST-XH Connectors & Crimps   |                  $4 |         $4 |
-| 1 Set | Female Header Sockets        |                  $2 |         $2 |
-|     — | LEDs, Resistors & Capacitors |                 ~$2 |        ~$2 |
-|     — | Wire, Heat Shrink & Misc.    |                 ~$5 |        ~$5 |
-
-**Estimated Electronics Cost:** **$85–95**
-
----
-
-## Mechanical BOM
-
-| Qty | Component              | Approx. Cost (Each) | Line Total |
-| --: | ---------------------- | ------------------: | ---------: |
-|   1 | NEMA 17 Stepper Motor  |                 $18 |        $18 |
-|   1 | Lead Screw Assembly    |                 $25 |        $25 |
-|   1 | Flexible Shaft Coupler |                  $6 |         $6 |
-|   2 | Linear Rails           |                 $25 |        $50 |
-| 2–4 | Linear Bearing Blocks  |        Included–$20 |      $0–20 |
-|   1 | Structural Hardware    |                 $20 |        $20 |
-|   1 | Grip Hardware          |                 $20 |        $20 |
-|   1 | Fastener Kit           |                 $10 |        $10 |
-|   1 | Heat-Set Inserts       |                  $5 |         $5 |
-|   — | Filament (Consumed)    |                ~$20 |       ~$20 |
-
-### 3D Printed Parts _(Files TBD)_
-
-- Base
-- Moving Crosshead
-- Motor Mount
-- Load Cell Mount
-- Electronics Enclosure
-- OLED Bezel
-- Specimen Grip Bodies
-- Cable Management Components
-
-**Estimated Mechanical Cost:** **$170–195**
+**Current Estimated Build Cost: ~$190 + power supply and miscellaneous hardware**
 
 ---
 
@@ -224,45 +144,39 @@ Additional documentation (assembly guide, wiring diagrams, calibration procedure
 
 ---
 
-# Project Roadmap
+# Repository Structure
 
-## Revision 1
-
-- Complete first working prototype
-- Functional motion control
-- Load cell calibration
-- Initial tensile testing
-
-## Revision 2
-
-- PCB optimization
-- Improved enclosure
-- Better cable management
-- Higher testing accuracy
-
-## Revision 3
-
-- Automated calibration
-- Material database
-- Desktop application
-- Improved manufacturability
+```text
+firmware/    ESP32 firmware
+pcb/         KiCad project files
+cad/         Mechanical CAD models
+docs/        Documentation
+images/      Project photos and diagrams
+```
 
 ---
 
-# Project Goals
+# Roadmap
 
-- Build an affordable tensile tester for hobbyists, students, and makers.
-- Learn embedded systems, motion control, PCB design, and machine design.
-- Generate repeatable force-displacement and stress-strain data.
-- Create a modular open-source hardware platform that others can build and improve.
+### Revision 1
+
+Complete the mechanical assembly, calibrate the load cell, and perform initial tensile tests.
+
+### Revision 2
+
+Optimize the PCB, wiring, enclosure, motion control, and data acquisition.
+
+### Revision 3
+
+Add automated testing, material property calculations, and desktop software.
 
 ---
 
 # Disclaimer
 
-This project is intended for educational and hobby use only and is **not** intended to replace calibrated or certified laboratory testing equipment.
+MACK-10 is intended for educational and hobby use and is not a replacement for calibrated or certified laboratory testing equipment.
 
-Measurements obtained from this device should not be used for engineering certification, regulatory compliance, or safety-critical design decisions.
+Measurements should not be used for engineering certification, regulatory compliance, or safety-critical design decisions.
 
 ---
 
