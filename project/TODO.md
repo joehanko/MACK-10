@@ -37,7 +37,7 @@
 - [ ] Add test pins for current readings (FUSE)
 - [ ] Buck Converter Header
 - [ ] M3 Through-hole reinforcements / grounding
-- [ ] DC Jack Pin Correction
+- [ ] DC Jack Pin Correction (ground pin 2-3 swap)
 - [ ] TMC2208 / TMC2209 90deg Header rotation for fan / cross ventilate
 - [ ] Move DC and USB connections to same location
 - [ ] Swap out Fuse JST connector for jumper
@@ -46,10 +46,11 @@
 - [ ] Integrate HX711 into board
 - [ ] Integrate Buck Converter into board
 - [ ] 24 and 9V Toggle Jumper ?
-- [ ] Fuse Pads (outboard) for solder jumper or pad connection
-- [ ] Voltage Pins
+- [ ] Fuse Pads (board perimeter) for solder jumper or pad connection
+- [ ] Voltage Testing Pins
+- [ ] I2C Interface Expansion Pins (4x16 GND, VCC, SCL, SDA)
 - [ ] Move TMC2208 Pin 1 Arrow to EN
-- [ ] Add 3 Status LEDs
+- [ ] Add 3 separate Status LEDs, multicolor? - RGB I2C Addressable
 - [ ] External Status LED
 - [ ] Inline Current Pins
 - [ ] Onboard Current Sensor IC
