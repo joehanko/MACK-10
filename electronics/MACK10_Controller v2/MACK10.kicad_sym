@@ -618,6 +618,370 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "HX711_IC"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "HX711_IC_0_1"
+			(rectangle
+				(start -10.16 16.51)
+				(end 10.16 -19.05)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "HX711_IC_1_1"
+			(pin power_in line
+				(at -12.7 11.43 0)
+				(length 2.54)
+				(name "VSUP"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -12.7 7.62 0)
+				(length 2.54)
+				(name "BASE"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -12.7 3.81 0)
+				(length 2.54)
+				(name "AVDD"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -12.7 0 0)
+				(length 2.54)
+				(name "VFB"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -12.7 -3.81 0)
+				(length 2.54)
+				(name "AGND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -12.7 -7.62 0)
+				(length 2.54)
+				(name "VBG"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -12.7 -11.43 0)
+				(length 2.54)
+				(name "INA-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -12.7 -15.24 0)
+				(length 2.54)
+				(name "INA+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 12.7 -15.24 180)
+				(length 2.54)
+				(name "INB-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 12.7 -11.43 180)
+				(length 2.54)
+				(name "INB+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 12.7 -7.62 180)
+				(length 2.54)
+				(name "PD_SCK"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 12.7 -3.81 180)
+				(length 2.54)
+				(name "DOUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name "XO"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 12.7 3.81 180)
+				(length 2.54)
+				(name "XI"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 12.7 7.62 180)
+				(length 2.54)
+				(name "RATE"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 12.7 11.43 180)
+				(length 2.54)
+				(name "DVDD"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "HX711_MODULE"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -955,7 +1319,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -10.16 10.16 0)
 				(length 2.54)
 				(name "IN+"
@@ -965,7 +1329,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -973,7 +1337,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -10.16 7.62 0)
 				(length 2.54)
 				(name "IN-"
@@ -983,7 +1347,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1001,7 +1365,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1019,7 +1383,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "4"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1037,7 +1401,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "5"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1055,7 +1419,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "6"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1073,7 +1437,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "7"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1091,43 +1455,7 @@
 						)
 					)
 				)
-				(number ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 10.16 1.27 180)
-				(length 2.54)
-				(name "IN+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at 10.16 -1.27 180)
-				(length 2.54)
-				(name "IN-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number ""
+				(number "8"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1567,7 +1895,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1585,7 +1913,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1603,7 +1931,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1621,7 +1949,7 @@
 						)
 					)
 				)
-				(number ""
+				(number "4"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2229,7 +2557,7 @@
 		)
 		(symbol "TMC2208_STEPSTICK_0_0"
 			(pin input line
-				(at -10.16 2.54 180)
+				(at -15.24 2.54 0)
 				(length 2.54)
 				(name "EN"
 					(effects
@@ -2247,7 +2575,7 @@
 				)
 			)
 			(pin input line
-				(at -10.16 -1.27 180)
+				(at -15.24 -1.27 0)
 				(length 2.54)
 				(name "MS1"
 					(effects
@@ -2265,7 +2593,7 @@
 				)
 			)
 			(pin input line
-				(at -10.16 -5.08 180)
+				(at -15.24 -5.08 0)
 				(length 2.54)
 				(name "MS2"
 					(effects
@@ -2283,7 +2611,7 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 -8.89 180)
+				(at -15.24 -8.89 0)
 				(length 2.54)
 				(name "NC"
 					(effects
@@ -2301,7 +2629,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -10.16 -12.7 180)
+				(at -15.24 -12.7 0)
 				(length 2.54)
 				(name "PDN_UART"
 					(effects
@@ -2319,7 +2647,7 @@
 				)
 			)
 			(pin input line
-				(at -10.16 -16.51 180)
+				(at -15.24 -16.51 0)
 				(length 2.54)
 				(name "CLK"
 					(effects
@@ -2337,7 +2665,7 @@
 				)
 			)
 			(pin input line
-				(at -10.16 -20.32 180)
+				(at -15.24 -20.32 0)
 				(length 2.54)
 				(name "STEP"
 					(effects
@@ -2355,7 +2683,7 @@
 				)
 			)
 			(pin input line
-				(at -10.16 -24.13 180)
+				(at -15.24 -24.13 0)
 				(length 2.54)
 				(name "DIR"
 					(effects
@@ -2373,7 +2701,7 @@
 				)
 			)
 			(pin power_in line
-				(at 12.7 2.54 0)
+				(at 17.78 2.54 180)
 				(length 2.54)
 				(name "VMOT"
 					(effects
@@ -2391,7 +2719,7 @@
 				)
 			)
 			(pin power_in line
-				(at 12.7 -1.27 0)
+				(at 17.78 -1.27 180)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -2409,7 +2737,7 @@
 				)
 			)
 			(pin output line
-				(at 12.7 -5.08 0)
+				(at 17.78 -5.08 180)
 				(length 2.54)
 				(name "1B"
 					(effects
@@ -2427,7 +2755,7 @@
 				)
 			)
 			(pin output line
-				(at 12.7 -8.89 0)
+				(at 17.78 -8.89 180)
 				(length 2.54)
 				(name "1A"
 					(effects
@@ -2445,7 +2773,7 @@
 				)
 			)
 			(pin output line
-				(at 12.7 -12.7 0)
+				(at 17.78 -12.7 180)
 				(length 2.54)
 				(name "2A"
 					(effects
@@ -2463,7 +2791,7 @@
 				)
 			)
 			(pin output line
-				(at 12.7 -16.51 0)
+				(at 17.78 -16.51 180)
 				(length 2.54)
 				(name "2B"
 					(effects
@@ -2481,7 +2809,7 @@
 				)
 			)
 			(pin power_in line
-				(at 12.7 -20.32 0)
+				(at 17.78 -20.32 180)
 				(length 2.54)
 				(name "VIO"
 					(effects
@@ -2499,7 +2827,7 @@
 				)
 			)
 			(pin power_in line
-				(at 12.7 -24.13 0)
+				(at 17.78 -24.13 180)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -2527,6 +2855,190 @@
 				)
 				(fill
 					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "WS2812B_LED"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "WS2812B_LED_0_1"
+			(rectangle
+				(start -5.08 5.08)
+				(end 5.08 -5.08)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "WS2812B_LED_1_1"
+			(pin power_in line
+				(at -5.08 2.54 180)
+				(length 2.54)
+				(name "+5V"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -5.08 0 180)
+				(length 2.54)
+				(name "DIN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -5.08 -2.54 180)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 5.08 2.54 0)
+				(length 2.54)
+				(name "+5V"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 5.08 0 0)
+				(length 2.54)
+				(name "DOUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 5.08 -2.54 0)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
 				)
 			)
 		)
@@ -2591,29 +3103,8 @@
 				)
 			)
 		)
-		(symbol "XIAO_ESP32_C6_0_1"
-			(rectangle
-				(start -19.05 19.05)
-				(end 21.59 -16.51)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "XIAO_ESP32_C6_1_1"
-			(text "XIAO_ESP32_C6"
-				(at 14.478 -17.78 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(pin passive line
+		(symbol "XIAO_ESP32_C6_0_0"
+			(pin bidirectional line
 				(at -21.59 10.16 0)
 				(length 2.54)
 				(name "D0"
@@ -2631,7 +3122,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at -21.59 6.35 0)
 				(length 2.54)
 				(name "D1"
@@ -2649,7 +3140,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at -21.59 2.54 0)
 				(length 2.54)
 				(name "D2"
@@ -2667,7 +3158,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at -21.59 -1.27 0)
 				(length 2.54)
 				(name "D3"
@@ -2685,7 +3176,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at -21.59 -5.08 0)
 				(length 2.54)
 				(name "D4"
@@ -2703,7 +3194,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at -21.59 -8.89 0)
 				(length 2.54)
 				(name "D5"
@@ -2721,7 +3212,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at -21.59 -12.7 0)
 				(length 2.54)
 				(name "D6"
@@ -2739,7 +3230,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at 24.13 -12.7 180)
 				(length 2.54)
 				(name "D7"
@@ -2757,7 +3248,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at 24.13 -8.89 180)
 				(length 2.54)
 				(name "D8"
@@ -2775,7 +3266,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at 24.13 -5.08 180)
 				(length 2.54)
 				(name "D9"
@@ -2793,7 +3284,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin bidirectional line
 				(at 24.13 -1.27 180)
 				(length 2.54)
 				(name "D10"
@@ -2811,7 +3302,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin power_out line
 				(at 24.13 2.54 180)
 				(length 2.54)
 				(name "3V3_OUT"
@@ -2829,7 +3320,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin power_in line
 				(at 24.13 6.35 180)
 				(length 2.54)
 				(name "GND"
@@ -2847,7 +3338,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin power_in line
 				(at 24.13 10.16 180)
 				(length 2.54)
 				(name "VBUS"
@@ -2865,7 +3356,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin input line
 				(at -13.97 21.59 270)
 				(length 2.54)
 				(name "MTDI"
@@ -2883,7 +3374,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin output line
 				(at -10.16 21.59 270)
 				(length 2.54)
 				(name "MTDO"
@@ -2901,7 +3392,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin input line
 				(at -6.35 21.59 270)
 				(length 2.54)
 				(name "EN"
@@ -2919,7 +3410,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin power_in line
 				(at -2.54 21.59 270)
 				(length 2.54)
 				(name "GND"
@@ -2937,7 +3428,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin input line
 				(at 1.27 21.59 270)
 				(length 2.54)
 				(name "MTMS"
@@ -2955,7 +3446,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin input line
 				(at 5.08 21.59 270)
 				(length 2.54)
 				(name "MTCK"
@@ -2973,7 +3464,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin input line
 				(at 8.89 21.59 270)
 				(length 2.54)
 				(name "BOOT"
@@ -2991,6 +3482,57 @@
 					)
 				)
 			)
+			(pin power_in line
+				(at -2.54 -19.05 90)
+				(length 2.54)
+				(name "VBAT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 2.54 -19.05 90)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "XIAO_ESP32_C6_0_1"
+			(rectangle
+				(start -19.05 19.05)
+				(end 21.59 -16.51)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "XIAO_ESP32_C6_1_0"
 			(pin passive line
 				(at 12.7 21.59 270)
 				(length 2.54)
@@ -3009,39 +3551,13 @@
 					)
 				)
 			)
-			(pin passive line
-				(at -2.54 -19.05 90)
-				(length 2.54)
-				(name "VBAT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "23"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 2.54 -19.05 90)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "24"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
+		)
+		(symbol "XIAO_ESP32_C6_1_1"
+			(text "XIAO_ESP32_C6"
+				(at 14.478 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
 					)
 				)
 			)
