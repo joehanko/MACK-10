@@ -1,16 +1,117 @@
-(module "Mini360 step-down" (layer F.Cu) (tedit 5B7ACF15)
-  (fp_text reference REF** (at 0 0.5) (layer F.SilkS)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_text value Mini360 (at 0 -0.5) (layer F.Fab)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_line (start -8.75 -5.54) (end 8.75 -5.54) (layer F.SilkS) (width 0.15))
-  (fp_line (start 8.75 5.53) (end -8.75 5.53) (layer F.SilkS) (width 0.15))
-  (fp_line (start -8.75 -5.54) (end -8.75 5.53) (layer F.SilkS) (width 0.15))
-  (fp_line (start 8.75 5.53) (end 8.75 -5.54) (layer F.SilkS) (width 0.15))
-  (pad 1 thru_hole oval (at -7.62 -4.57) (size 2.5 2) (drill 0.762) (layers *.Cu *.Mask))
-  (pad 2 thru_hole oval (at -7.62 4.57) (size 2.5 2) (drill 0.762) (layers *.Cu *.Mask))
-  (pad 3 thru_hole oval (at 7.62 -4.57) (size 2.5 2) (drill 0.762) (layers *.Cu *.Mask))
-  (pad 4 thru_hole oval (at 7.62 4.57) (size 2.5 2) (drill 0.762) (layers *.Cu *.Mask))
+(footprint "Mini360_step-down"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0.5 0)
+		(layer "F.SilkS")
+		(uuid "a664ac6d-9fdc-4619-a966-8d79b14b04f7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Mini360"
+		(at 0 -0.5 0)
+		(layer "F.Fab")
+		(uuid "f27eedea-1074-47b9-8b93-53ca901fd50c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6f2075d8-ad3a-4fad-9653-f04e1886de4d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dbe180ba-9bc1-4eea-889c-4de2ffa707b5")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -8.75 -5.54)
+		(end -8.75 5.53)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "74300b10-3540-464b-b1b6-1005c4a835cd")
+	)
+	(fp_line
+		(start -8.75 -5.54)
+		(end 8.75 -5.54)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "65bb6ad8-12d6-4537-babf-99b9096900d9")
+	)
+	(fp_line
+		(start 8.75 5.53)
+		(end -8.75 5.53)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fc7fb371-a990-455e-baa2-254d07ba2ddf")
+	)
+	(fp_line
+		(start 8.75 5.53)
+		(end 8.75 -5.54)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "527c3f41-d746-4250-9682-d91ae996c183")
+	)
+	(pad "1" smd oval
+		(at -7.62 -4.57)
+		(size 2.5 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "11dead7e-9da9-4e9c-bfd2-3f21e29494af")
+	)
+	(pad "2" smd oval
+		(at -7.62 4.57)
+		(size 2.5 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "1ca49a70-dded-4d1e-9984-074dddd51ab2")
+	)
+	(pad "3" smd oval
+		(at 7.62 -4.57)
+		(size 2.5 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7485417f-689c-4763-8c78-55e60ada83b4")
+	)
+	(pad "4" smd oval
+		(at 7.62 4.57)
+		(size 2.5 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "3e153a2d-0a7a-4db1-bb55-d01e4e381bac")
+	)
+	(embedded_fonts no)
 )

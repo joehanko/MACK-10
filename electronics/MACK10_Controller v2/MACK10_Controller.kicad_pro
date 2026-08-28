@@ -783,9 +783,15 @@
           "label": "Sim.Pins",
           "name": "Sim.Pins",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "tp",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -833,7 +839,7 @@
         "uuid": "b4040018-4e12-4890-8820-9e52ff91a3d0"
       }
     ],
-    "used_designators": "TP_HXDT1,#FLG1-2,TP_24VI1,J1-3,J5-30,JP1-5,M1,TP_STEP1,24VIN1,D1-5,HXSCK1,F1-2,GND1,TP_EN1,TP_GND1,TP1-3,TP5-27,HXDT1,TP_SDIR1,SW1-7,U1-14,SDIR1,C1-31,TP_HXSCK1,5VOUT1,R1-32,TP_5VO1,STEP1,Q1-5,#PWR1-26,EN1,L1-3",
+    "used_designators": "L1-3,EN1,#PWR1-26,Q1-5,STEP1,TP_5VO1,R1-32,C1-31,SDIR1,5VOUT1,TP_HXSCK1,U1-14,SW1-7,TP_SDIR1,HXDT1,TP1-27,TP_GND1,GND1,TP_EN1,D1-5,HXSCK1,F1-2,24VIN1,TP_STEP1,M1,JP1-5,J1-30,TP_24VI1,#FLG1-4,TP_HXDT1",
     "variants": []
   },
   "sheets": [
