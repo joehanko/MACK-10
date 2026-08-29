@@ -5576,6 +5576,12 @@
 		(uuid "12d8871c-e0b9-42ed-a10c-3df971eb2368")
 	)
 	(junction
+		(at 190.5 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14fac5b9-fe4d-4ac1-a009-dd4e5c077b40")
+	)
+	(junction
 		(at 137.16 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5594,16 +5600,16 @@
 		(uuid "37580761-a24f-4692-bb89-9d503b0a0ba5")
 	)
 	(junction
-		(at 175.26 95.25)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3848276f-91a7-4e0b-83e7-2ae466928537")
-	)
-	(junction
 		(at 372.11 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b7320d3-88da-4fe2-b420-90e9019f774a")
+	)
+	(junction
+		(at 190.5 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3c074a4e-11e4-47e5-86db-c7cf85457900")
 	)
 	(junction
 		(at 133.35 96.52)
@@ -5618,12 +5624,6 @@
 		(uuid "3e5f2e01-a8b1-4a22-8ade-5f1f928b6fbb")
 	)
 	(junction
-		(at 193.04 92.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "452764a2-d0f2-4f62-8dac-1f9b4082d74d")
-	)
-	(junction
 		(at 106.68 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5634,6 +5634,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4af29d8d-f207-4243-a40d-30351ff29918")
+	)
+	(junction
+		(at 193.04 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "60bbc437-b06d-4522-b47d-cbc3c68420eb")
 	)
 	(junction
 		(at 144.78 60.96)
@@ -5658,6 +5664,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7aa3cca7-a58a-4270-8792-a823f971df7b")
+	)
+	(junction
+		(at 168.91 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7c732942-ad1e-4a11-b47a-cf84204452dd")
 	)
 	(junction
 		(at 74.93 100.33)
@@ -6007,6 +6019,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 95.25) (xy 190.5 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18df4bad-2e72-4277-9bf6-a969eb78bc87")
+	)
+	(wire
+		(pts
 			(xy 255.27 105.41) (xy 256.54 105.41)
 		)
 		(stroke
@@ -6057,6 +6079,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 85.09) (xy 195.58 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22ad7689-6bb2-49e3-80ca-23e0c8e7d4bb")
+	)
+	(wire
+		(pts
 			(xy 292.1 80.01) (xy 294.64 80.01)
 		)
 		(stroke
@@ -6094,6 +6126,16 @@
 			(type default)
 		)
 		(uuid "24d987ae-04ae-4468-a891-ca22803565c6")
+	)
+	(wire
+		(pts
+			(xy 190.5 85.09) (xy 193.04 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25e18310-7ae0-4545-b651-09997bef0487")
 	)
 	(wire
 		(pts
@@ -6244,6 +6286,16 @@
 			(type default)
 		)
 		(uuid "39e60787-41cb-43eb-b2eb-a77e9bced85b")
+	)
+	(wire
+		(pts
+			(xy 190.5 95.25) (xy 195.58 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ab8d7c1-0a3e-46fa-bc54-98b765c63cc7")
 	)
 	(wire
 		(pts
@@ -6477,16 +6529,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 88.9) (xy 193.04 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "50a74f80-5110-43df-86f9-fae51d42fab9")
-	)
-	(wire
-		(pts
 			(xy 128.27 111.76) (xy 137.16 111.76)
 		)
 		(stroke
@@ -6667,13 +6709,13 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 95.25) (xy 195.58 95.25)
+			(xy 190.5 88.9) (xy 190.5 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6bb3dcc1-ad9a-4f18-9b9e-2f6831d73d38")
+		(uuid "6e24f34d-7f79-4d96-a704-a25bcaafa3c0")
 	)
 	(wire
 		(pts
@@ -6927,6 +6969,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 83.82) (xy 193.04 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cd621a1-ea84-4aab-8ee1-988e41b32d44")
+	)
+	(wire
+		(pts
 			(xy 302.26 58.42) (xy 303.53 58.42)
 		)
 		(stroke
@@ -6934,6 +6986,16 @@
 			(type default)
 		)
 		(uuid "921ba281-d8eb-44d1-b79f-88a78fe886b9")
+	)
+	(wire
+		(pts
+			(xy 189.23 91.44) (xy 190.5 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92636318-8284-4291-9ea9-2ba1e0caf9d5")
 	)
 	(wire
 		(pts
@@ -7147,16 +7209,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 92.71) (xy 195.58 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b3527564-b71c-440b-9139-fbb79bd640cb")
-	)
-	(wire
-		(pts
 			(xy 227.33 40.64) (xy 228.6 40.64)
 		)
 		(stroke
@@ -7337,6 +7389,16 @@
 	)
 	(wire
 		(pts
+			(xy 190.5 91.44) (xy 190.5 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c503b8f2-785f-4e03-93bb-9bc6de8095a0")
+	)
+	(wire
+		(pts
 			(xy 142.24 60.96) (xy 144.78 60.96)
 		)
 		(stroke
@@ -7487,7 +7549,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 95.25) (xy 175.26 95.25)
+			(xy 166.37 95.25) (xy 168.91 95.25)
 		)
 		(stroke
 			(width 0)
@@ -7514,6 +7576,16 @@
 			(type default)
 		)
 		(uuid "dce07bdd-426b-407a-85dd-94de30f31e97")
+	)
+	(wire
+		(pts
+			(xy 189.23 88.9) (xy 190.5 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dce2e76b-fdd6-4e01-91c2-832a1fd89301")
 	)
 	(wire
 		(pts
@@ -7637,6 +7709,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 85.09) (xy 195.58 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e94e1e72-db2e-48ab-89fa-ad9d75936b5c")
+	)
+	(wire
+		(pts
 			(xy 74.93 86.36) (xy 102.87 86.36)
 		)
 		(stroke
@@ -7687,7 +7769,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 92.71) (xy 193.04 92.71)
+			(xy 187.96 85.09) (xy 190.5 85.09)
 		)
 		(stroke
 			(width 0)
@@ -7737,6 +7819,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 97.79) (xy 168.91 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6b287ed-c687-4332-b0d4-754947962351")
+	)
+	(wire
+		(pts
 			(xy 292.1 91.44) (xy 294.64 91.44)
 		)
 		(stroke
@@ -7754,16 +7846,6 @@
 			(type default)
 		)
 		(uuid "fc4f5974-2fd2-452c-9404-fae92ae856bc")
-	)
-	(wire
-		(pts
-			(xy 175.26 91.44) (xy 175.26 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc6971fd-66a2-40fb-8040-c42d938dbdf5")
 	)
 	(wire
 		(pts
@@ -7962,7 +8044,7 @@
 		(uuid "21f43e55-3238-4697-855d-511e3c460872")
 	)
 	(label "MOTOR_VMOT"
-		(at 171.45 95.25 180)
+		(at 166.37 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8349,7 +8431,7 @@
 		(uuid "4b2db30d-289b-40c3-9b7f-c2e255eeb797")
 	)
 	(label "MOTOR_24V"
-		(at 190.5 92.71 180)
+		(at 187.96 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9522,7 +9604,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 193.04 88.9 0)
+		(at 193.04 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9532,8 +9614,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "018ae4ad-5214-4f0f-95a7-c34067f7fd19")
-		(property "Reference" "TP13"
-			(at 195.58 84.3279 0)
+		(property "Reference" "TP7"
+			(at 195.58 79.2479 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9543,8 +9625,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Motor 24V"
-			(at 195.58 86.8679 0)
+		(property "Value" "M24V"
+			(at 195.58 81.7879 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9555,7 +9637,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 198.12 88.9 0)
+			(at 198.12 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9566,7 +9648,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 88.9 0)
+			(at 198.12 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9577,7 +9659,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 193.04 88.9 0)
+			(at 193.04 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9593,7 +9675,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP13")
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -9779,7 +9861,7 @@
 				)
 			)
 		)
-		(property "Value" "SMD_STATUS"
+		(property "Value" "STATUS"
 			(at 308.9275 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10102,7 +10184,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "23994043-9516-4dcd-adaa-c1eae9179108")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 199.644 114.554 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10182,7 +10264,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "U5")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -10444,25 +10526,25 @@
 		(fields_autoplaced yes)
 		(uuid "34b3a3d7-5f48-4c3f-b207-39592593394a")
 		(property "Reference" "F1"
-			(at 363.22 26.6699 90)
+			(at 370.84 26.6699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "2A Fuse"
-			(at 363.22 29.2099 90)
+		(property "Value" "Fuse"
+			(at 370.84 29.2099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
@@ -10524,7 +10606,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "36cd240a-845d-4116-96a9-c8c2dfb94a8d")
-		(property "Reference" "U4"
+		(property "Reference" "U6"
 			(at 241.808 109.474 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10592,7 +10674,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "U4")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -11202,7 +11284,7 @@
 				)
 			)
 		)
-		(property "Value" "FUSE_BYPASS"
+		(property "Value" "BYP_1"
 			(at 367.03 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11517,7 +11599,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "562d9d12-421f-45a9-be33-80ad6f8091ce")
-		(property "Reference" "TP14"
+		(property "Reference" "TP11"
 			(at 387.35 45.2121 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11578,7 +11660,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP14")
+					(reference "TP11")
 					(unit 1)
 				)
 			)
@@ -12292,6 +12374,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 184.15 88.9 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7a92f9d4-f154-4286-8372-76787293b6d2")
+		(property "Reference" "J10"
+			(at 181.61 88.8999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BYP_2"
+			(at 181.61 91.4399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 184.15 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 184.15 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "2f0f057a-8135-44ef-ab30-1fe7b7b5a30d")
+		)
+		(pin "1"
+			(uuid "9b020e62-8c15-4721-9bee-c700fc322821")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 113.03 86.36 90)
 		(unit 1)
@@ -12552,7 +12716,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9fa430f8-86a9-459e-a7b9-867acf40ffd3")
-		(property "Reference" "TP7"
+		(property "Reference" "TP5"
 			(at 142.24 69.3421 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12613,7 +12777,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP7")
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -12630,7 +12794,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a65adbef-3dbe-4eb6-bb70-f670311e135b")
-		(property "Reference" "U6"
+		(property "Reference" "U5"
 			(at 232.918 31.496 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12761,7 +12925,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "U6")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -12778,7 +12942,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a99fee4c-fcb6-4335-8ef7-25fea1fb194d")
-		(property "Reference" "TP11"
+		(property "Reference" "TP8"
 			(at 198.8821 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12839,7 +13003,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP11")
+					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -12856,7 +13020,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "aade5a7c-18ef-4ca1-a89c-fec66e4ad172")
-		(property "Reference" "TP12"
+		(property "Reference" "TP6"
 			(at 185.42 104.9021 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12867,7 +13031,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Motor VMOT"
+		(property "Value" "VMOT"
 			(at 185.42 102.3621 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12917,7 +13081,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP12")
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -12936,7 +13100,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "af27facf-5ba1-40d2-8f98-ef45f3750ccd")
-		(property "Reference" "TP8"
+		(property "Reference" "TP10"
 			(at 259.08 113.7921 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12997,7 +13161,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP8")
+					(reference "TP10")
 					(unit 1)
 				)
 			)
@@ -13278,7 +13442,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c49a09d6-7a04-443c-8cc9-7d7b40036b5a")
-		(property "Reference" "TP5"
+		(property "Reference" "TP3"
 			(at 139.7 123.9521 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13339,7 +13503,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP5")
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -13796,7 +13960,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ddd65090-68bc-4fde-928a-1356d7d4b909")
-		(property "Reference" "TP4"
+		(property "Reference" "TP2"
 			(at 139.7 103.3779 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13857,7 +14021,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP4")
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -13945,8 +14109,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 175.26 91.44 0)
-		(mirror y)
+		(at 168.91 97.79 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13956,7 +14119,7 @@
 		(dnp no)
 		(uuid "e242ffed-9674-45c8-b86a-45d26437f16e")
 		(property "Reference" "#FLG02"
-			(at 175.26 89.535 0)
+			(at 168.91 99.695 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13967,7 +14130,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 175.26 86.36 0)
+			(at 168.91 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13977,7 +14140,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 175.26 91.44 0)
+			(at 168.91 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13988,7 +14151,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 175.26 91.44 0)
+			(at 168.91 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13999,7 +14162,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 175.26 91.44 0)
+			(at 168.91 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14220,7 +14383,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f614d0ce-5cf3-4b30-9d60-99e309f6465a")
-		(property "Reference" "TP6"
+		(property "Reference" "TP4"
 			(at 142.24 48.7679 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14281,7 +14444,7 @@
 		(instances
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
-					(reference "TP6")
+					(reference "TP4")
 					(unit 1)
 				)
 			)
