@@ -576,7 +576,7 @@
       {
         "clearance": 0.25,
         "name": "Power_24V",
-        "pcb_color": "rgb(255, 0, 0)",
+        "pcb_color": "rgb(132, 0, 0)",
         "priority": 4,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 1.0,
