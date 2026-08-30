@@ -60,13 +60,13 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.2,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
           "remove_islands": 0,
-          "thermal_relief_gap": 0.5,
-          "thermal_relief_spoke_width": 0.5
+          "thermal_relief_gap": 0.3,
+          "thermal_relief_spoke_width": 0.35
         }
       },
       "diff_pair_dimensions": [
@@ -76,7 +76,180 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "copper_edge_clearance|25400000|18005000|1212a2f6-5892-411c-8458-6865142a8779|e0adc350-b28f-43a4-a04d-bc1ec0fdc768",
+          "Override - Clearance is enough"
+        ],
+        [
+          "copper_edge_clearance|28535000|18600000|1212a2f6-5892-411c-8458-6865142a8779|c5ffea5d-af4d-4ded-8c06-86ace4a4891a",
+          "Override - Clearance is enough"
+        ],
+        [
+          "copper_edge_clearance|31075000|18600000|1212a2f6-5892-411c-8458-6865142a8779|02c0d1a5-3124-4574-9ffc-530ec0be621e",
+          "Override - Clearance is enough"
+        ],
+        [
+          "copper_edge_clearance|33615000|18600000|1212a2f6-5892-411c-8458-6865142a8779|ffa5149b-a6cf-49f9-9078-a0eab7d52d5c",
+          "Override - Clearance is enough"
+        ],
+        [
+          "copper_edge_clearance|36155000|18600000|1212a2f6-5892-411c-8458-6865142a8779|fc47443e-6860-47fd-a7d4-a4b89e170797",
+          "Override - Clearance is enough"
+        ],
+        [
+          "copper_edge_clearance|38695000|18600000|1212a2f6-5892-411c-8458-6865142a8779|5a6ce2b3-aa30-4b3b-bdae-66d4b5205a7a",
+          "Override - Clearance is enough"
+        ],
+        [
+          "copper_edge_clearance|41235000|18600000|1212a2f6-5892-411c-8458-6865142a8779|5fb4fbf3-b5a8-4696-bdc0-0d0aa1a6bf97",
+          "Override - Clearance is enough"
+        ],
+        [
+          "copper_edge_clearance|43775000|18600000|1212a2f6-5892-411c-8458-6865142a8779|78a12454-512f-457e-943e-7e06bced0efe",
+          "Override - Clearance is enough"
+        ],
+        [
+          "lib_footprint_mismatch|35888900|28736250|311022d6-da73-4c22-be8f-11b30afac1d3|00000000-0000-0000-0000-000000000000",
+          "Deleted unused center pads to reduce interference"
+        ],
+        [
+          "silk_over_copper|25400000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|e0adc350-b28f-43a4-a04d-bc1ec0fdc768",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|20780500|eaf9ba19-59e7-4ad0-8ae2-b59bb0b12f6d|5498056a-cbf4-4808-9d3c-ad6f4d4d34d1",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|22296500|7f533943-6d0c-4d7f-a532-4eb61821009a|5498056a-cbf4-4808-9d3c-ad6f4d4d34d1",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|24836500|7f533943-6d0c-4d7f-a532-4eb61821009a|18367814-c4e9-497a-b143-6f0229471812",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|27376500|7f533943-6d0c-4d7f-a532-4eb61821009a|a0b131eb-f398-4904-9287-e3eeb02e5ceb",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|29916500|7f533943-6d0c-4d7f-a532-4eb61821009a|4015e2f3-8936-44da-a058-6e1593e6872e",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|32456500|7f533943-6d0c-4d7f-a532-4eb61821009a|1d185e38-a70a-4444-9dd1-97c59dae8234",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|34996500|7f533943-6d0c-4d7f-a532-4eb61821009a|583791b0-a3cd-4063-b3b7-cee5611361fd",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|37536500|7f533943-6d0c-4d7f-a532-4eb61821009a|040f9ca1-92b3-4dff-b2ce-43ac8ab253a8",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|27058400|37929500|91e3672b-c4f2-4d26-9828-69a3e281969e|040f9ca1-92b3-4dff-b2ce-43ac8ab253a8",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|28535000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|c5ffea5d-af4d-4ded-8c06-86ace4a4891a",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|31075000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|02c0d1a5-3124-4574-9ffc-530ec0be621e",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|33615000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|ffa5149b-a6cf-49f9-9078-a0eab7d52d5c",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|36155000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|fc47443e-6860-47fd-a7d4-a4b89e170797",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|38695000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|5a6ce2b3-aa30-4b3b-bdae-66d4b5205a7a",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|41235000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|5fb4fbf3-b5a8-4696-bdc0-0d0aa1a6bf97",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|43775000|19400000|7b0cbb90-3fe5-4b4b-8890-09d7f4a46c6a|78a12454-512f-457e-943e-7e06bced0efe",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|20784500|c0948bbe-b006-4aa4-80bb-00a1fb177938|33b41a17-36a2-466d-b8af-2ec432f37a26",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|22296500|4ea3bbe3-91cc-4344-b0d2-60382996bd81|33b41a17-36a2-466d-b8af-2ec432f37a26",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|24836500|4ea3bbe3-91cc-4344-b0d2-60382996bd81|fcc045f0-958d-4f89-88f5-81f3e345c38a",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|27376500|4ea3bbe3-91cc-4344-b0d2-60382996bd81|fab83f46-5177-449d-b63c-eaa64818cb7f",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|29916500|4ea3bbe3-91cc-4344-b0d2-60382996bd81|1082098d-10fa-4a8b-a8c3-78612c6bbec8",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|32456500|4ea3bbe3-91cc-4344-b0d2-60382996bd81|aa2f7a93-3e11-4fbb-8212-ada1e4a3f9c5",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|34996500|4ea3bbe3-91cc-4344-b0d2-60382996bd81|eca5a039-2454-44f7-bdcd-f19a571df7d7",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|37536500|4ea3bbe3-91cc-4344-b0d2-60382996bd81|d368ddea-9181-40d4-b2f3-8f1be5073b16",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|44838400|37929500|e231a96e-92f6-4968-acb5-de2f4e3cf071|d368ddea-9181-40d4-b2f3-8f1be5073b16",
+          "XIAO footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|55350000|31280000|b57ce596-7ccf-4eea-950a-727400bac479|c939b5bb-7ba8-43ec-b505-5c6d1fb91ab1",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|55350000|40420000|b57ce596-7ccf-4eea-950a-727400bac479|68924a84-3f76-49b5-b0e3-5a2e509bfbd6",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|56230000|30320000|810de608-9053-4d2f-b391-d67d905d5f1f|c939b5bb-7ba8-43ec-b505-5c6d1fb91ab1",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|56230000|41390000|242c9165-c140-44e4-a7a6-86eca4e0c5ea|68924a84-3f76-49b5-b0e3-5a2e509bfbd6",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|71470000|30320000|810de608-9053-4d2f-b391-d67d905d5f1f|06b3a18a-f07b-46c2-84ce-f665e628ab1b",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|71470000|41390000|242c9165-c140-44e4-a7a6-86eca4e0c5ea|157b2c80-3e4f-43e8-8188-0f2c1a46b1b8",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|72850000|31280000|dfa7de95-4cbd-4037-b64a-3fbc3f4e864d|06b3a18a-f07b-46c2-84ce-f665e628ab1b",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ],
+        [
+          "silk_over_copper|72850000|40420000|dfa7de95-4cbd-4037-b64a-3fbc3f4e864d|157b2c80-3e4f-43e8-8188-0f2c1a46b1b8",
+          "MINI360 footprint outline intentionally overlaps castellated pads"
+        ]
+      ],
       "meta": {
         "version": 2
       },
