@@ -2447,6 +2447,172 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:1N5819"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N5819"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?41*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "1N5819_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N5819_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Jumper:Jumper_2_Open"
 			(pin_numbers
 				(hide yes)
@@ -5574,6 +5740,12 @@
 		(uuid "686a55a4-5aae-4ebd-96d1-496fb7e7f1a7")
 	)
 	(junction
+		(at 208.28 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f21a489-3f2f-4cc8-b761-77ef18b7919c")
+	)
+	(junction
 		(at 384.81 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5946,6 +6118,16 @@
 			(type default)
 		)
 		(uuid "18df4bad-2e72-4277-9bf6-a969eb78bc87")
+	)
+	(wire
+		(pts
+			(xy 208.28 24.13) (xy 208.28 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1992cb10-e8f4-4dd0-9d7a-d25bfdc0c8f6")
 	)
 	(wire
 		(pts
@@ -6439,6 +6621,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 34.29) (xy 208.28 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f2c26b6-4fd3-4d27-b075-a26e5e423f45")
+	)
+	(wire
+		(pts
 			(xy 128.27 111.76) (xy 137.16 111.76)
 		)
 		(stroke
@@ -6719,6 +6911,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 41.91) (xy 208.28 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fd91412-782f-4aa7-944e-84b913530504")
+	)
+	(wire
+		(pts
 			(xy 254 50.8) (xy 255.27 50.8)
 		)
 		(stroke
@@ -6956,16 +7158,6 @@
 			(type default)
 		)
 		(uuid "94115677-fbaa-4a6d-949e-e34ccea1b3b9")
-	)
-	(wire
-		(pts
-			(xy 201.93 41.91) (xy 203.2 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "942faec8-c6d8-484e-b03e-e1e35021fd8a")
 	)
 	(wire
 		(pts
@@ -7226,6 +7418,16 @@
 			(type default)
 		)
 		(uuid "bfc2fcb9-ed59-46ee-8ad9-a73b28c8ec7e")
+	)
+	(wire
+		(pts
+			(xy 208.28 39.37) (xy 208.28 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c184349e-9928-4617-95e7-dd4e02e894e1")
 	)
 	(wire
 		(pts
@@ -8310,16 +8512,6 @@
 		)
 		(uuid "4b1b7615-b915-42bc-9aa6-2cac99b1eae9")
 	)
-	(label "+5V"
-		(at 203.2 41.91 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4b2db30d-289b-40c3-9b7f-c2e255eeb797")
-	)
 	(label "MOTOR_24V"
 		(at 187.96 85.09 180)
 		(effects
@@ -8822,6 +9014,16 @@
 			(justify right bottom)
 		)
 		(uuid "8e66e06b-a764-4660-91c5-bd4a9df46f78")
+	)
+	(label "+5V"
+		(at 208.28 24.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8eaafcee-6e54-4575-929b-07270a2e9981")
 	)
 	(label "+5V"
 		(at 382.27 64.77 180)
@@ -9978,6 +10180,88 @@
 			(project "MACK10_Controller"
 				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N5819")
+		(at 208.28 30.48 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21b9ab70-4e2f-4500-b437-fbcba65ada7f")
+		(property "Reference" "D3"
+			(at 210.82 29.5274 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SS14"
+			(at 210.82 32.0674 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 212.725 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+			(at 208.28 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
+			(at 208.28 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "064d7827-f813-4a1c-8e93-334c2f5f51e6")
+		)
+		(pin "2"
+			(uuid "03c99a98-77eb-4ad0-91b3-806dce4e49bc")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -11478,6 +11762,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 208.28 39.37 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5491d2cb-6297-477b-a3bb-79177b43feba")
+		(property "Reference" "#FLG05"
+			(at 210.185 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 213.36 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 208.28 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fdf3bba9-5270-4464-a23b-e849bda99aa2")
+		)
+		(instances
+			(project "MACK10_Controller"
+				(path "/b4040018-4e12-4890-8820-9e52ff91a3d0"
+					(reference "#FLG05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 384.81 40.64 0)
 		(mirror x)
@@ -11965,7 +12326,7 @@
 				)
 			)
 		)
-		(property "Value" "ENABLE"
+		(property "Value" "RESET"
 			(at 165.1 20.32 0)
 			(show_name no)
 			(do_not_autoplace no)

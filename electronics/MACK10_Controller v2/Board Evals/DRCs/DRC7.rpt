@@ -1,0 +1,73 @@
+** Drc report for MACK10_Controller.kicad_pcb **
+** Created on 2026-08-30T19:47:35 **
+** Report includes: Errors, Warnings **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 17 Footprint errors **
+[duplicate_footprints]: Duplicate footprints
+    Local override; warning
+    @(73.0250 mm, 27.9750 mm): Footprint TP11
+    @(72.8500 mm, 75.3250 mm): Footprint TP11
+[duplicate_footprints]: Duplicate footprints
+    Local override; warning
+    @(72.8500 mm, 75.3250 mm): Footprint TP11
+    @(72.8500 mm, 75.3250 mm): Footprint TP11
+[duplicate_footprints]: Duplicate footprints
+    Local override; warning
+    @(72.8500 mm, 63.4600 mm): Footprint TP8
+    @(72.8500 mm, 63.4600 mm): Footprint TP8
+[duplicate_footprints]: Duplicate footprints
+    Local override; warning
+    @(72.8500 mm, 71.3700 mm): Footprint TP10
+    @(72.8500 mm, 71.3700 mm): Footprint TP10
+[net_conflict]: No pad found for pin 22 (/3V3) in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 18 (/GND) in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 24 (/GND) in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 21 in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 20 in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 15 in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 16 in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 19 in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[net_conflict]: No pad found for pin 23 in schematic
+    Local override; warning
+    @(27.0584 mm, 39.9165 mm): Footprint U3
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(21.1500 mm, 80.4500 mm): Footprint Mount 2
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(21.1500 mm, 21.1500 mm): Footprint Mount 1
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(70.6000 mm, 21.1500 mm): Footprint Mount 3
+[extra_footprint]: Extra footprint
+    Local override; warning
+    @(70.6000 mm, 80.4500 mm): Footprint Mount 4
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **
