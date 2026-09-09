@@ -35,34 +35,50 @@
 
 - [ ] Move ESP32 Right Header 2.54mm x+, to ensure proper seat of ESP32
 - [ ] Add test pins for current readings (FUSE)
-- [ ] Buck Converter Header
-- [ ] M3 Through-hole reinforcements / grounding
-- [ ] DC Jack Pin Correction (ground pin 2-3 swap)
-- [ ] TMC2208 / TMC2209 90deg Header rotation for fan / cross ventilate
-- [ ] Move DC and USB connections to same location
-- [ ] Swap out Fuse JST connector for jumper
-- [ ] Reduce board size (1/3)
-- [ ] Adjust Right ESP32 Header by 2.54mm
-- [ ] Integrate HX711 into board
 - [ ] Integrate Buck Converter into board
 - [ ] 24 and 9V Toggle Jumper ?
-- [ ] Fuse Pads (board perimeter) for solder jumper or pad connection
-- [ ] Voltage Testing Pins
 - [ ] I2C Interface Expansion Pins (4x16 GND, VCC, SCL, SDA)
-- [ ] Move TMC2208 Pin 1 Arrow to EN
-- [ ] Add 3 separate Status LEDs, multicolor? - RGB I2C Addressable
-- [ ] External Status LED
-- [ ] Inline Current Pins
-- [ ] Onboard Current Sensor IC
-- [ ] Change Stepper Pin 1 Location (Enable)
-- [ ] Add stepper Test Pins (Voltage and pin location)
-- [ ] Add flyback diode to prevent motor EMF
-- [ ] Add rotary encoder input pins
-- [ ] Switch to 2x5 ribbon cable male header for inputs
-- [ ] Change input pins to joystick (active, not signal)
-- [ ] Add more ground test pins
-- [ ] Add test pins to back of board (?)
-- [ ] Connect Unused Pins as Male Headers
+- [ ] M3 Through-hole reinforcements / grounding
+- [0] TMC2208 / TMC2209 90deg Header rotation for fan / cross ventilate
+- [0] Buck Converter Header
+- [0] Adjust Right ESP32 Header by 2.54mm
+- [x] DC Jack Pin Correction (ground pin 2-3 swap)
+- [x] Move DC and USB connections to same location
+- [x] Swap out Fuse JST connector for jumper
+- [x] Reduce board size (1/2)
+- [x] Integrate HX711 into board
+- [x] Fuse Pads (board perimeter) for solder jumper or pad connection
+- [x] Voltage Testing Pins
+- [x] Move TMC2208 Pin 1 Arrow to EN
+- [x] Change Stepper Pin 1 Location (Enable)
+- [x] Add 3 separate Status LEDs, multicolor? - RGB I2C Addressable
+- [x] External Status LED
+- [x] Inline Current Pins
+- [x] Onboard Current Sensor IC
+- [x] Add stepper Test Pins (Voltage and pin location)
+- [x] Add flyback diode to prevent motor EMF
+- [x] Add rotary encoder input pins
+- [x] Switch to 2x5 ribbon cable male header for inputs
+- [x] Change input pins to joystick (active, not signal)
+- [x] Add more ground test pins
+- [x] Add test pins to back of board (?)
+- [x] Connect Unused Pins as Male Headers
+
+## MACK-10 TODO - V3 Notes
+
+- [ ] Ensure all GND are connected to GND plane / fill (2 unconnected GNDs)
+- [ ] Some footprints clipped (too close to edge of board)
+- [ ] VIN and GND test pins too close (risks short)
+- [ ] Bypass pins could be a 2x3 vertical stack to save space (specialized pin header)
+- [ ] Thermal relief checks
+- [ ] Avoid via-in-pad wherever possible
+- [ ]--- Make note of difficult to solder pins (thermal relief issues)
+- [ ] Integrade PCF8575 / I/O expander to save space
+- [ ] 4-layer board
+- [ ] Pick-and-place small SMDs / resistors
+- [ ] Pogo pins over test pads? Or external testing Pins to test board?
+- [ ] INA226 Footprint wrong orientation, rotate 90º as board is too wide
+- [ ] Move XIAO underneath EN Pad / hard to solder
 
 ### Mechanical
 
