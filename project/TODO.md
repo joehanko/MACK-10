@@ -75,10 +75,36 @@
 - [ ]--- Make note of difficult to solder pins (thermal relief issues)
 - [ ] Integrade PCF8575 / I/O expander to save space
 - [ ] 4-layer board
-- [ ] Pick-and-place small SMDs / resistors
+- [ ] Pick-and-place small SMDs / resistors (move to 0603 or smaller)
 - [ ] Pogo pins over test pads? Or external testing Pins to test board?
 - [ ] INA226 Footprint wrong orientation, rotate 90º as board is too wide
 - [ ] Move XIAO underneath EN Pad / hard to solder
+- [ ] Smaller reset button
+- [ ] Put I/0, Fuse, E-stop in one 1x6 connector
+- [ ] Replace 50V Cap Electrolytic Can to SMD
+- [ ] Expand MINI360 Pads outward for easier soldering
+
+## Bring-up Checklist
+
+- [] Finish enclosure
+- [] Calibrate load cell properly in N
+- [] Fix/finish INA226 current sensing
+- [] Add E-stop logic + latched reset behavior
+- [] Add limit switches
+- [] Add magnetic encoder
+- [] Add OLED/display UI
+- [] Add physical buttons
+- [] Add user-facing status LED
+- [] Move firmware into PlatformIO
+- [] Split firmware into modules (motor, loadcell, display, safety, web, etc.)
+- [] Create automated Rev-B board self-test / bring-up routine
+- [] Rebuild the tensile-test state machine cleanly
+- [] Rebuild the XIAO-hosted web dashboard
+- [] Keep the 15-second rolling live graph
+- [] Keep full test history for CSV export
+- [] Add Start / Stop / New Test browser controls
+- [] Tie web test flow into motor + fracture detection
+- [] Later add displacement, force-vs-displacement, stress/strain, and richer test exports
 
 ### Mechanical
 
